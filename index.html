@@ -40,12 +40,39 @@ body{
 .wrap{
   max-width:430px;margin:0 auto;position:relative;overflow:clip;z-index:1;
   background-color:var(--bg);
+  /* Patrón Art Deco elegante: cruz-hatching diagonal dorado muy sutil */
   background-image:
-    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><g transform='translate(100,100)'><ellipse rx='16' ry='28' fill='%23ffe0d8' fill-opacity='.06' transform='rotate(0) translate(0,-12)'/><ellipse rx='16' ry='28' fill='%23c2c2c2' fill-opacity='.04' transform='rotate(72) translate(0,-12)'/><ellipse rx='16' ry='28' fill='%23ffe0d8' fill-opacity='.04' transform='rotate(144) translate(0,-12)'/><ellipse rx='16' ry='28' fill='%23c2c2c2' fill-opacity='.04' transform='rotate(216) translate(0,-12)'/><ellipse rx='16' ry='28' fill='%23ffe0d8' fill-opacity='.04' transform='rotate(288) translate(0,-12)'/><circle r='8' fill='%23c8a87a' fill-opacity='.05'/></g></svg>"),
-    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><g transform='translate(50,50)'><ellipse rx='9' ry='17' fill='%23ffe0d8' fill-opacity='.05' transform='rotate(36) translate(0,-7)'/><ellipse rx='9' ry='17' fill='%23c2c2c2' fill-opacity='.04' transform='rotate(108) translate(0,-7)'/><ellipse rx='9' ry='17' fill='%23ffe0d8' fill-opacity='.04' transform='rotate(180) translate(0,-7)'/><ellipse rx='9' ry='17' fill='%23c2c2c2' fill-opacity='.04' transform='rotate(252) translate(0,-7)'/><ellipse rx='9' ry='17' fill='%23ffe0d8' fill-opacity='.04' transform='rotate(324) translate(0,-7)'/><circle r='4.5' fill='%23c8a87a' fill-opacity='.06'/></g></svg>");
-  background-repeat:repeat;
-  background-size:200px 200px, 100px 100px;
-  background-position:0 0, 50px 50px;
+    /* Diagonal ↘ fina dorada */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 28px,
+      rgba(200,168,122,.035) 28px,
+      rgba(200,168,122,.035) 29px
+    ),
+    /* Diagonal ↙ fina blush */
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      transparent 28px,
+      rgba(255,224,216,.045) 28px,
+      rgba(255,224,216,.045) 29px
+    ),
+    /* Grid fino plateado */
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 55px,
+      rgba(194,194,194,.022) 55px,
+      rgba(194,194,194,.022) 56px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 55px,
+      rgba(194,194,194,.018) 55px,
+      rgba(194,194,194,.018) 56px
+    );
 }
 
 /* ENVELOPE SCREEN */
@@ -107,26 +134,26 @@ body{
 /* HERO */
 .hero{
   position:relative;width:100%;min-height:100dvh;
-  display:flex;flex-direction:column;background:#f5ede9;
+  display:flex;flex-direction:column;justify-content:center;
+  align-items:center;background:#f5ede9;
 }
 .hero-bg{
   position:absolute;inset:0;
-  background:linear-gradient(160deg,#f5ede9 0%,#ffe0d8 40%,#f0d8d0 100%);
+  background:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-daphne/hero-flores.jpeg') center center/cover no-repeat;
+  filter:saturate(0.85) brightness(0.97);
 }
 .hero-veil{
   position:absolute;inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(255,248,246,0) 0%,
-    rgba(255,248,246,0) 35%,
-    rgba(255,248,246,0.45) 58%,
-    rgba(255,248,246,0.90) 78%,
-    #fff8f6 100%
-  );
+  background:
+    radial-gradient(ellipse at center 40%,rgba(255,248,246,0.22) 0%,rgba(255,248,246,0.58) 55%,rgba(255,248,246,0.88) 100%),
+    linear-gradient(to bottom,rgba(255,248,246,0.35) 0%,rgba(255,248,246,0) 30%,rgba(255,248,246,0) 55%,rgba(255,248,246,0.75) 80%,#fff8f6 100%);
 }
 .hero-bottom{
   position:relative;z-index:3;
-  margin-top:auto;padding:0 28px 62px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:0 28px;
+  /* Frame dorado decorativo */
+  margin:auto;width:100%;
 }
 .fecha-sec{padding:32px 26px 10px;text-align:center;}
 .fecha-line{display:flex;align-items:center;justify-content:center;gap:18px;}
@@ -165,6 +192,48 @@ body{
   color:var(--dark);margin-top:10px;
 }
 
+/* HERO extras */
+.hero-eyebrow{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:11px;letter-spacing:7px;text-transform:uppercase;
+  color:rgba(200,168,122,0.92);
+  margin-bottom:22px;opacity:0;transform:translateY(10px);
+  text-shadow:0 1px 4px rgba(255,255,255,0.8);
+}
+.hero-frame{
+  position:absolute;inset:28px;pointer-events:none;opacity:0;
+}
+.hero-frame-corner{
+  position:absolute;width:40px;height:40px;
+}
+.hero-frame-tl{top:0;left:0;}
+.hero-frame-tr{top:0;right:0;transform:scaleX(-1);}
+.hero-frame-bl{bottom:0;left:0;transform:scaleY(-1);}
+.hero-frame-br{bottom:0;right:0;transform:scale(-1,-1);}
+.hero-date-line{
+  display:flex;align-items:center;gap:12px;
+  margin-top:20px;opacity:0;transform:translateY(10px);
+}
+.hero-date-bar{
+  flex:1;max-width:50px;height:1px;
+  background:linear-gradient(to right,transparent,rgba(200,168,122,0.7));
+}
+.hero-date-bar:last-child{
+  background:linear-gradient(to left,transparent,rgba(200,168,122,0.7));
+}
+.hero-date-text{
+  font-family:'Cormorant Garamond',serif;font-weight:500;font-size:13px;
+  letter-spacing:6px;text-transform:uppercase;color:var(--dark);
+  text-shadow:0 1px 6px rgba(255,255,255,0.7);
+  white-space:nowrap;
+}
+.hero-city{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:14px;letter-spacing:4px;color:rgba(122,92,82,0.75);
+  margin-top:8px;text-transform:uppercase;opacity:0;
+  text-shadow:0 1px 4px rgba(255,255,255,0.8);
+}
+
 /* ORNAMENTO */
 .orn{display:flex;justify-content:center;padding:10px 0;}
 .orn svg{width:100%;max-width:300px;height:42px;}
@@ -192,21 +261,26 @@ section{padding:64px 26px;}
 
 /* INTRO */
 .intro-wrap{
-  text-align:center;padding:56px 30px;
+  text-align:center;padding:56px 30px 48px;
+  overflow:visible;
 }
 .intro-drop{
-  font-family:'Great Vibes',cursive;font-size:90px;line-height:.8;
-  float:left;margin-right:6px;margin-top:-8px;
+  font-family:'Great Vibes',cursive;font-size:82px;
+  /* line-height y padding-top evitan el recorte del ascender */
+  line-height:1;
+  display:block;float:left;
+  margin-right:4px;margin-top:6px;
+  padding-top:0;
   background:linear-gradient(135deg,var(--accent),var(--rose));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .intro-text{
   font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;
   line-height:1.75;color:var(--text);text-align:justify;
-  hyphens:auto;
+  hyphens:auto;overflow:visible;
 }
 .intro-firma{
-  display:block;margin-top:22px;
+  display:block;clear:both;margin-top:22px;
   font-family:'Great Vibes',cursive;font-size:42px;
   background:linear-gradient(135deg,var(--accent),var(--rose));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
@@ -808,10 +882,8 @@ footer .credit a{color:inherit;text-decoration:none;}
 
 <!-- ENVELOPE -->
 <div id="envelope-screen" role="button" aria-label="Toca para abrir tu invitacion">
-  <!-- PENDIENTE: subir sobre.png propio a Supabase path fotos-clientes/xv-daphne/sobre.png -->
-  <img id="env-image" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/assets/sobre.png" alt="Invitaci&oacute;n Daphne Paola" style="filter:hue-rotate(310deg) saturate(0.6)">
-  <!-- PENDIENTE: subir apertura.mp4 propio -->
-  <video id="env-video" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/assets/sobre-apertura.mp4" playsinline webkit-playsinline muted preload="auto"></video>
+  <img id="env-image" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-daphne/sobre.png" alt="Invitaci&oacute;n Daphne Paola">
+  <video id="env-video" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-daphne/apertura.mp4" playsinline webkit-playsinline muted preload="auto"></video>
   <p class="envelope-hint" id="env-hint">Toca para abrir</p>
 </div>
 <div id="env-flash"></div>
@@ -829,11 +901,34 @@ footer .credit a{color:inherit;text-decoration:none;}
     <div class="hero-bg"></div>
     <div class="hero-veil"></div>
     <div class="hero-bottom">
+
+      <!-- Eyebrow superior -->
+      <div class="hero-eyebrow" id="hEy">MIS XV A&Ntilde;OS</div>
+
+      <!-- Frame dorado esquinas -->
+      <div class="hero-frame" id="hFrame">
+        <svg class="hero-frame-corner hero-frame-tl" viewBox="0 0 40 40" fill="none"><path d="M2 38 L2 2 L38 2" stroke="rgba(200,168,122,.65)" stroke-width="1" opacity=".8"/><circle cx="2" cy="2" r="2" fill="rgba(200,168,122,.55)"/></svg>
+        <svg class="hero-frame-corner hero-frame-tr" viewBox="0 0 40 40" fill="none"><path d="M2 38 L2 2 L38 2" stroke="rgba(200,168,122,.65)" stroke-width="1" opacity=".8"/><circle cx="2" cy="2" r="2" fill="rgba(200,168,122,.55)"/></svg>
+        <svg class="hero-frame-corner hero-frame-bl" viewBox="0 0 40 40" fill="none"><path d="M2 38 L2 2 L38 2" stroke="rgba(200,168,122,.65)" stroke-width="1" opacity=".8"/><circle cx="2" cy="2" r="2" fill="rgba(200,168,122,.55)"/></svg>
+        <svg class="hero-frame-corner hero-frame-br" viewBox="0 0 40 40" fill="none"><path d="M2 38 L2 2 L38 2" stroke="rgba(200,168,122,.65)" stroke-width="1" opacity=".8"/><circle cx="2" cy="2" r="2" fill="rgba(200,168,122,.55)"/></svg>
+      </div>
+
       <h1 class="hero-name" id="hNm">Daphne Paola</h1>
       <div class="hero-sub" id="hSb">
         <span class="xv-num">XV</span>
         <span class="xv-anos">A&ntilde;os</span>
       </div>
+
+      <!-- Fecha bajo el nombre -->
+      <div class="hero-date-line" id="hDate">
+        <span class="hero-date-bar"></span>
+        <span class="hero-date-text">8 · Agosto · 2026</span>
+        <span class="hero-date-bar"></span>
+      </div>
+
+      <!-- Ciudad -->
+      <div class="hero-city" id="hCity">Guadalajara, Jalisco</div>
+
     </div>
   </section>
 
@@ -1617,9 +1712,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* LAUNCH */
 function launchPage(){
-  gsap.timeline({defaults:{ease:'power2.out'}})
-    .to('#hNm',{opacity:1,y:0,duration:1.8,ease:'power3.out'})
-    .to('#hSb',{opacity:1,y:0,duration:1.4},'-=1');
+  var tl=gsap.timeline({defaults:{ease:'power3.out'}});
+  tl.to('#hEy',{opacity:1,y:0,duration:1.1},0.2)
+    .to('#hFrame',{opacity:1,duration:1.4},0.3)
+    .to('#hNm',{opacity:1,y:0,duration:1.8},0.5)
+    .to('#hSb',{opacity:1,y:0,duration:1.4},1.0)
+    .to('#hDate',{opacity:1,y:0,duration:1.1},1.2)
+    .to('#hCity',{opacity:1,duration:1.0},1.4);
   initScrollReveal();
   initItinerary();
   initWheelGallery();
