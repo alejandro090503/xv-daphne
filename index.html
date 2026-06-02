@@ -268,22 +268,22 @@ section{padding:64px 26px;}
 .intro-wrap{
   text-align:center;padding:56px 30px 48px;
 }
-/* Wrapper de la H — bloque centrado, SIN float, sin riesgo de clipping */
-.intro-drop-wrap{
-  display:block;text-align:center;
-  line-height:1;margin-bottom:4px;
-}
-.intro-drop{
-  font-family:'Great Vibes',cursive;font-size:96px;
-  line-height:1;display:inline-block;
-  background:linear-gradient(160deg,var(--dark) 0%,var(--accent) 50%,var(--rose) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 2px 8px rgba(122,92,82,.18));
-}
 .intro-text{
   font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;
-  line-height:1.75;color:var(--text);text-align:justify;
-  hyphens:auto;
+  line-height:1.85;color:var(--text);
+  text-align:center; /* centrado, no justificado */
+}
+/* "H" inline — misma línea que "ay instantes", levemente más grande */
+.intro-drop{
+  font-family:'Great Vibes',cursive;
+  font-size:2.2em; /* relativo al body text, ~40px — inline natural */
+  line-height:0.85;
+  vertical-align:-0.18em; /* baja levemente para alinear con la línea base */
+  display:inline;
+  background:linear-gradient(160deg,var(--dark) 0%,var(--accent) 55%,var(--rose) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 1px 4px rgba(122,92,82,.15));
+  margin-right:1px;
 }
 .intro-firma{
   display:block;margin-top:22px;
@@ -980,11 +980,7 @@ footer .credit a{color:inherit;text-decoration:none;}
   <!-- INTRO — Frase inicial -->
   <section style="padding:0;" id="sintro">
     <div class="intro-wrap rv">
-      <!-- H como bloque centrado independiente — sin float, sin clipping posible -->
-      <div class="intro-drop-wrap" aria-hidden="true">
-        <span class="intro-drop">H</span>
-      </div>
-      <p class="intro-text">ay instantes que la vida nos regala una sola vez.
+      <p class="intro-text"><span class="intro-drop">H</span>ay instantes que la vida nos regala una sola vez.
         Con el coraz&oacute;n lleno de gratitud y alegr&iacute;a, el honor de tu presencia se solicita
         para acompa&ntilde;ar a <strong>Daphne Paola</strong> en la celebraci&oacute;n de sus quince a&ntilde;os
         &mdash; el inicio de un nuevo cap&iacute;tulo colmado de sue&ntilde;os y bendiciones.
