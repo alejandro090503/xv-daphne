@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Daphne Paola &middot; Mis XV A&ntilde;os &middot; 8 Agosto 2026</title>
+<meta name="description" content="Invitaci&oacute;n digital a los XV A&ntilde;os de Daphne Paola Villarruel Monta&ntilde;o &middot; 8 de Agosto de 2026 &middot; Guadalajara, Jalisco">
+<meta property="og:title" content="XV A&ntilde;os de Daphne Paola &middot; 8 Agosto 2026">
+<meta property="og:description" content="El honor de tu presencia &middot; Guadalajara, Jalisco &middot; 8 de Agosto de 2026">
+<meta property="og:url" content="https://xv-daphne.vercel.app">
+<meta property="og:image" content="https://xv-daphne.vercel.app/og-image.jpg">
+<meta property="og:image:alt" content="XV A&ntilde;os Daphne Paola">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Cormorant Garamond',serif;font-weight:400;font-size:17px;
+  color:var(--text);background:var(--bg);line-height:1.65;overflow-x:hidden;
+}
+:root{
+  --bg:#fff8f6;
+  --accent:#c2a898;
+  --dark:#7a5c52;
+  --text:#2e1f1a;
+  --surface:rgba(255,224,216,0.18);
+  --card:rgba(255,255,255,0.88);
+  --blush:#ffe0d8;
+  --silver:#c2c2c2;
+  --rose:#e8b4a6;
+  --gold:#c8a87a;
+  --gold-soft:#e8d4b8;
+}
+
+.wrap{
+  max-width:430px;margin:0 auto;position:relative;overflow:clip;z-index:1;
+  background-color:var(--bg);
+  background-image:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><g transform='translate(100,100)'><ellipse rx='16' ry='28' fill='%23ffe0d8' fill-opacity='.06' transform='rotate(0) translate(0,-12)'/><ellipse rx='16' ry='28' fill='%23c2c2c2' fill-opacity='.04' transform='rotate(72) translate(0,-12)'/><ellipse rx='16' ry='28' fill='%23ffe0d8' fill-opacity='.04' transform='rotate(144) translate(0,-12)'/><ellipse rx='16' ry='28' fill='%23c2c2c2' fill-opacity='.04' transform='rotate(216) translate(0,-12)'/><ellipse rx='16' ry='28' fill='%23ffe0d8' fill-opacity='.04' transform='rotate(288) translate(0,-12)'/><circle r='8' fill='%23c8a87a' fill-opacity='.05'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><g transform='translate(50,50)'><ellipse rx='9' ry='17' fill='%23ffe0d8' fill-opacity='.05' transform='rotate(36) translate(0,-7)'/><ellipse rx='9' ry='17' fill='%23c2c2c2' fill-opacity='.04' transform='rotate(108) translate(0,-7)'/><ellipse rx='9' ry='17' fill='%23ffe0d8' fill-opacity='.04' transform='rotate(180) translate(0,-7)'/><ellipse rx='9' ry='17' fill='%23c2c2c2' fill-opacity='.04' transform='rotate(252) translate(0,-7)'/><ellipse rx='9' ry='17' fill='%23ffe0d8' fill-opacity='.04' transform='rotate(324) translate(0,-7)'/><circle r='4.5' fill='%23c8a87a' fill-opacity='.06'/></g></svg>");
+  background-repeat:repeat;
+  background-size:200px 200px, 100px 100px;
+  background-position:0 0, 50px 50px;
+}
+
+/* ENVELOPE SCREEN */
+#envelope-screen{
+  position:fixed;inset:0;z-index:10000;
+  overflow:hidden;cursor:pointer;
+  opacity:0;background:#fff5f2;
+}
+#env-image{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;object-position:center;z-index:2;
+}
+#env-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;object-position:center;
+  z-index:3;opacity:0;
+}
+#env-flash{position:fixed;inset:0;background:#fff5f2;z-index:9999;opacity:0;pointer-events:none;}
+.envelope-hint{
+  position:absolute;bottom:52px;left:50%;transform:translateX(-50%);
+  font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:8px;text-transform:uppercase;
+  color:rgba(122,92,82,0.88);opacity:0;cursor:pointer;white-space:nowrap;z-index:10;
+  padding:14px 40px;
+  background:rgba(255,255,255,0.78);
+  border:1px solid rgba(194,168,152,0.35);
+  border-radius:40px;
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 6px 28px rgba(200,168,122,0.18);
+  overflow:hidden;
+  animation:hintFloat 3.2s ease-in-out infinite;
+}
+.envelope-hint::before{
+  content:'';position:absolute;top:0;left:-130%;width:75%;height:100%;
+  background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0.3) 56%,transparent 72%);
+  animation:shimmerSweep 2.8s ease-in-out infinite;pointer-events:none;
+}
+@keyframes shimmerSweep{0%{left:-130%;}55%{left:200%;}100%{left:200%;}}
+@keyframes hintFloat{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(-5px);}}
+
+/* LOADER */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--bg);
+  display:none;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+}
+.ld-name{
+  font-family:'Great Vibes',cursive;font-size:84px;
+  background:linear-gradient(135deg,var(--accent),var(--blush),var(--dark));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:flex;gap:1px;
+}
+.ld-name span{opacity:0;display:inline-block;transform:translateY(22px);}
+.ld-tag{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:13px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--accent);opacity:0;
+}
+
+/* HERO */
+.hero{
+  position:relative;width:100%;min-height:100dvh;
+  display:flex;flex-direction:column;background:#f5ede9;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,#f5ede9 0%,#ffe0d8 40%,#f0d8d0 100%);
+}
+.hero-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(255,248,246,0) 0%,
+    rgba(255,248,246,0) 35%,
+    rgba(255,248,246,0.45) 58%,
+    rgba(255,248,246,0.90) 78%,
+    #fff8f6 100%
+  );
+}
+.hero-bottom{
+  position:relative;z-index:3;
+  margin-top:auto;padding:0 28px 62px;text-align:center;
+}
+.fecha-sec{padding:32px 26px 10px;text-align:center;}
+.fecha-line{display:flex;align-items:center;justify-content:center;gap:18px;}
+.fecha-line .fl-bar{flex:1;max-width:60px;height:1px;background:linear-gradient(to right,transparent,var(--gold));opacity:.5;}
+.fecha-line .fl-bar.right{background:linear-gradient(to left,transparent,var(--gold));}
+.fecha-txt{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:16px;letter-spacing:7px;text-transform:uppercase;color:var(--dark);
+}
+.hero-name{
+  font-family:'Great Vibes',cursive;font-size:clamp(52px,16vw,80px);line-height:1.35;
+  background:linear-gradient(135deg,#fff8f6,var(--blush) 40%,#fff8f6);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:10px;padding:0 16px 8px;
+  filter:drop-shadow(0 2px 18px rgba(0,0,0,.38));
+  transform:translateY(30px);opacity:0;
+}
+.hero-sub{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  transform:translateY(16px);opacity:0;
+}
+.xv-num{
+  font-family:'Cormorant Garamond',serif;font-weight:400;
+  font-size:68px;letter-spacing:12px;line-height:1;
+  background:linear-gradient(135deg,var(--dark) 0%,var(--blush) 45%,var(--dark) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  position:relative;display:inline-block;
+}
+.xv-num::after{
+  content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);
+  width:50px;height:1px;background:var(--gold);opacity:.55;
+}
+.xv-anos{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:18px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--dark);margin-top:10px;
+}
+
+/* ORNAMENTO */
+.orn{display:flex;justify-content:center;padding:10px 0;}
+.orn svg{width:100%;max-width:300px;height:42px;}
+
+/* SECCIONES */
+section{padding:64px 26px;}
+.eyebrow{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:13px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--accent);text-align:center;margin-bottom:8px;
+}
+.eyebrow-gold{color:var(--gold);}
+.eyebrow-silver{color:var(--silver);}
+.sec-title{
+  font-family:'Great Vibes',cursive;font-size:50px;
+  text-align:center;line-height:1.35;margin-bottom:30px;
+  padding:2px 12px 6px;
+  background:linear-gradient(135deg,var(--silver) 0%,var(--accent) 45%,var(--blush) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.sec-title-gold{
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-soft) 45%,var(--gold) 100%) !important;
+  -webkit-background-clip:text !important;-webkit-text-fill-color:transparent !important;background-clip:text !important;
+}
+
+/* INTRO */
+.intro-wrap{
+  text-align:center;padding:56px 30px;
+}
+.intro-drop{
+  font-family:'Great Vibes',cursive;font-size:90px;line-height:.8;
+  float:left;margin-right:6px;margin-top:-8px;
+  background:linear-gradient(135deg,var(--accent),var(--rose));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.intro-text{
+  font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;
+  line-height:1.75;color:var(--text);text-align:justify;
+  hyphens:auto;
+}
+.intro-firma{
+  display:block;margin-top:22px;
+  font-family:'Great Vibes',cursive;font-size:42px;
+  background:linear-gradient(135deg,var(--accent),var(--rose));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* COUNTDOWN */
+#scd{overflow:visible;}
+.cd2-container{
+  background:linear-gradient(145deg,rgba(255,255,255,0.72),rgba(255,248,246,0.88));
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border:1px solid rgba(194,168,152,0.13);
+  border-radius:28px;padding:40px 20px 36px;
+  box-shadow:0 12px 48px rgba(194,168,152,0.10),inset 0 1px 0 rgba(255,255,255,0.85);
+  position:relative;overflow:hidden;
+}
+.cd2-container::before{
+  content:'';position:absolute;top:-1px;left:15%;right:15%;height:1.5px;
+  background:linear-gradient(90deg,transparent,var(--accent) 25%,var(--silver) 50%,var(--rose) 75%,transparent);
+}
+.cd2-container::after{
+  content:'';position:absolute;bottom:-1px;left:25%;right:25%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(194,168,152,0.2),transparent);
+}
+.cd2-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 20px;max-width:290px;margin:0 auto;}
+.cd2-unit{display:flex;flex-direction:column;align-items:center;}
+.cd2-ring-wrap{position:relative;width:112px;height:112px;}
+.cd2-ring-wrap svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 2px 8px rgba(194,168,152,0.10));}
+.cd2-ring-bg{fill:none;stroke:rgba(194,168,152,0.08);stroke-width:2.5;}
+.cd2-ring-progress{fill:none;stroke-width:2.8;stroke-linecap:round;}
+.cd2-ring-glow{fill:none;stroke-width:9;stroke-linecap:round;filter:blur(7px);opacity:.3;}
+.cd2-value{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.cd2-num{
+  font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500;
+  color:var(--dark);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:1px;
+}
+.cd2-lbl{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--accent);margin-top:4px;opacity:.75;
+}
+.cd2-quote{
+  text-align:center;margin-top:28px;padding-top:20px;
+  border-top:1px solid rgba(194,168,152,0.10);
+}
+.cd2-quote p{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:16px;color:var(--dark);opacity:.6;letter-spacing:1px;line-height:1.6;
+}
+
+/* UBICACION */
+.loc-grid{display:flex;flex-direction:column;gap:20px;}
+.loc1-card{
+  position:relative;overflow:hidden;
+  background:linear-gradient(158deg,rgba(255,255,255,0.88),rgba(255,248,246,0.97));
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border-radius:28px;
+  border:1px solid rgba(194,168,152,0.16);
+  box-shadow:0 14px 56px rgba(194,168,152,0.12),inset 0 1px 0 rgba(255,255,255,0.96);
+}
+.loc1-card::before{
+  content:'';position:absolute;left:0;top:12%;bottom:12%;width:2.5px;
+  background:linear-gradient(to bottom,transparent,var(--silver) 25%,var(--accent) 55%,var(--blush) 80%,transparent);
+  opacity:.52;
+}
+.loc1-top{padding:30px 28px 0;text-align:center;}
+.loc1-pin{
+  width:56px;height:56px;border-radius:50%;margin:0 auto 16px;
+  background:linear-gradient(135deg,rgba(194,168,152,0.14),rgba(194,168,152,0.26));
+  border:1.5px solid rgba(194,168,152,0.30);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(200,168,122,0.15);
+}
+.loc1-pin svg{width:22px;height:22px;fill:var(--gold);}
+.loc1-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.loc1-time{
+  font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;
+  color:var(--dark);letter-spacing:8px;margin-bottom:10px;
+}
+.loc1-addr{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:15px;color:rgba(46,31,26,.6);letter-spacing:.4px;line-height:1.75;
+}
+.loc1-hsep{
+  width:48px;height:1px;margin:18px auto 20px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.35;
+}
+.loc1-cta{text-align:center;padding:0 22px 24px;}
+.loc1-map{
+  width:100%;height:200px;border:0;display:block;
+  border-radius:0 0 28px 28px;opacity:.92;
+  filter:saturate(0.85);
+}
+.btn{
+  display:inline-block;margin-top:14px;padding:12px 30px;
+  background:linear-gradient(135deg,var(--accent),var(--dark));color:#FFFFFF;border-radius:30px;
+  font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:3px;text-decoration:none;
+  transition:opacity .3s,transform .3s;border:none;cursor:pointer;
+  box-shadow:0 4px 16px rgba(194,168,152,0.32);
+}
+.btn:hover{opacity:.88;transform:translateY(-2px);}
+
+/* CALENDAR */
+.cal-c{text-align:center;}
+.cal-c p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:17px;color:var(--dark);margin-bottom:18px;}
+
+/* ITINERARIO */
+#siti{overflow:visible;padding-left:24px;padding-right:24px;}
+.itv3{
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;
+  padding:10px 0 10px;
+}
+.itv3-track{
+  position:absolute;left:50%;transform:translateX(-50%);
+  top:0;bottom:0;width:1px;z-index:0;
+  background:linear-gradient(to bottom,
+    transparent 0%,
+    rgba(194,194,194,0.30) 10%,
+    rgba(194,168,152,0.22) 45%,
+    rgba(255,224,216,0.38) 80%,
+    transparent 100%);
+}
+.itv3-glow{
+  position:absolute;left:50%;transform:translateX(-50%);
+  top:0;width:5px;height:110px;
+  background:linear-gradient(to bottom,
+    transparent,
+    rgba(194,194,194,0.6) 20%,
+    rgba(194,168,152,0.9) 50%,
+    rgba(255,224,216,0.6) 80%,
+    transparent);
+  filter:blur(3px);border-radius:6px;
+  z-index:1;pointer-events:none;
+}
+.itv3-item{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;padding:30px 16px 4px;width:100%;
+}
+.itv3-gem{
+  width:9px;height:9px;
+  background:linear-gradient(135deg,var(--blush) 30%,var(--dark));
+  transform:rotate(45deg);border-radius:2px;
+  box-shadow:0 0 0 4px rgba(194,168,152,0.10),0 0 18px rgba(194,168,152,0.40);
+  margin-bottom:18px;flex-shrink:0;
+}
+.itv3-gem-gold{
+  background:linear-gradient(135deg,var(--gold-soft) 30%,var(--gold));
+  box-shadow:0 0 0 4px rgba(200,168,122,0.12),0 0 18px rgba(200,168,122,0.42);
+}
+.itv3-gem-silver{
+  background:linear-gradient(135deg,#e0e0e0 30%,var(--silver));
+  box-shadow:0 0 0 4px rgba(194,194,194,0.12),0 0 18px rgba(194,194,194,0.42);
+}
+.itv3-time{
+  font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;
+  letter-spacing:8px;color:var(--dark);line-height:1;margin-bottom:6px;
+  text-indent:8px;
+}
+.itv3-ev{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:15px;color:rgba(46,31,26,0.55);
+  letter-spacing:3px;text-transform:uppercase;line-height:1.5;
+  text-indent:3px;
+}
+.itv3-item:last-child{padding-bottom:10px;}
+
+/* DRESS CODE */
+.dc2-wrap{
+  position:relative;overflow:hidden;
+  background:linear-gradient(155deg,#1a1a1a 0%,#0d0d0d 55%,#1a1a1a 100%);
+  border-radius:28px;padding:36px 24px 32px;
+  box-shadow:0 18px 60px rgba(0,0,0,0.35);
+}
+.dc2-wrap::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 18% 18%,rgba(194,168,152,0.10) 0%,transparent 60%),
+    radial-gradient(ellipse at 82% 82%,rgba(255,224,216,0.06) 0%,transparent 60%);
+}
+.dc2-wrap::after{
+  content:'';position:absolute;top:-1px;left:18%;right:18%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent) 30%,var(--silver) 70%,transparent);
+  opacity:.55;
+}
+.dc2-eyebrow{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:11px;letter-spacing:6px;text-transform:uppercase;
+  color:rgba(200,168,122,0.65);text-align:center;margin-bottom:4px;position:relative;
+}
+.dc2-title{
+  font-family:'Great Vibes',cursive;font-size:50px;
+  color:#fff;text-align:center;line-height:1.05;margin-bottom:6px;position:relative;
+  filter:drop-shadow(0 2px 14px rgba(194,168,152,0.38));
+}
+.dc2-formal{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;
+  letter-spacing:5px;text-transform:uppercase;
+  color:rgba(200,168,122,0.80);text-align:center;margin-bottom:22px;position:relative;
+}
+.dc2-strip{
+  display:flex;height:5px;border-radius:3px;overflow:hidden;margin-bottom:26px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.35);position:relative;
+}
+.dc2-strip span{flex:1;}
+.dc2-palette{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;position:relative;}
+.dc2-swatch{text-align:center;}
+.dc2-swatch .ds-circle{
+  width:58px;height:58px;border-radius:50%;margin:0 auto 8px;
+  border:2px solid rgba(255,255,255,0.13);
+  box-shadow:0 5px 18px rgba(0,0,0,0.28);
+}
+.dc2-swatch .ds-name{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);
+}
+.dc2-avoid{
+  position:relative;text-align:center;padding:15px 18px;
+  border:1px solid rgba(255,224,216,0.18);border-radius:14px;
+  background:rgba(255,224,216,0.04);
+}
+.dc2-avoid::before{
+  content:'&#x2715;';position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  width:22px;height:22px;border-radius:50%;
+  background:#0d0d0d;border:1px solid rgba(255,224,216,0.28);
+  font-size:10px;line-height:22px;text-align:center;
+  color:rgba(255,224,216,0.60);
+}
+.dc2-avoid p{
+  font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;font-weight:400;
+  color:rgba(255,224,216,0.72);letter-spacing:1px;line-height:1.65;
+}
+
+/* FAMILIA */
+.fam2{display:flex;flex-direction:column;gap:0;align-items:stretch;}
+.fam2-group{
+  width:100%;text-align:center;position:relative;padding:30px 26px;
+  background:linear-gradient(145deg,rgba(255,255,255,0.78),rgba(255,248,246,0.92));
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(194,168,152,0.13);
+  box-shadow:0 6px 30px rgba(194,168,152,0.07),inset 0 1px 0 rgba(255,255,255,0.88);
+}
+.fam2-group:first-child{border-radius:24px 24px 0 0;}
+.fam2-group:last-child{border-radius:0 0 24px 24px;}
+.fam2-medallion{
+  width:52px;height:52px;border-radius:50%;margin:0 auto 14px;
+  background:linear-gradient(135deg,rgba(194,168,152,0.14),rgba(255,224,216,0.26));
+  border:1.5px solid rgba(194,168,152,0.32);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(194,168,152,0.13);
+}
+.fam2-medallion svg{width:22px;height:22px;fill:none;stroke:var(--gold);stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round;}
+.fam2-role{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:11px;letter-spacing:6px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;opacity:.88;
+}
+.fam2-names{
+  font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;
+  color:var(--text);line-height:1.80;
+}
+.fam2-amp{
+  display:block;font-style:italic;font-size:30px;
+  color:var(--accent);opacity:.45;line-height:1.1;margin:4px 0;
+}
+.fam2-divider{
+  width:100%;display:flex;align-items:center;justify-content:center;
+  height:46px;position:relative;background:rgba(255,255,255,0.5);
+  border-left:1px solid rgba(194,168,152,0.13);border-right:1px solid rgba(194,168,152,0.13);
+}
+.fam2-divider::before,.fam2-divider::after{
+  content:'';position:absolute;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(194,168,152,0.18),transparent);
+}
+.fam2-divider::before{top:0;}
+.fam2-divider::after{bottom:0;}
+.fam2-divider svg{width:100px;height:26px;position:relative;}
+
+/* GALERIA */
+#sgal{padding:40px 0 50px;overflow:visible;}
+.wgal-scene{
+  position:relative;height:460px;overflow:hidden;margin:0 auto;
+}
+.wgal-rim{
+  position:absolute;
+  top:calc(50% - 160px);left:calc(50% - 160px);
+  width:320px;height:320px;
+  border-radius:50%;
+  border:1px solid rgba(194,168,152,0.14);
+  pointer-events:none;z-index:0;
+}
+.wgal-rim::before{
+  content:'';position:absolute;inset:20px;border-radius:50%;
+  border:1px dashed rgba(200,168,122,0.08);
+}
+.wgal-hub{
+  position:absolute;
+  width:18px;height:18px;
+  top:calc(50% - 9px);left:calc(50% - 9px);
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--blush));
+  box-shadow:0 2px 14px rgba(194,168,152,0.40);
+  z-index:6;
+}
+.wgal-wheel{
+  position:absolute;
+  top:50%;left:50%;
+  width:0;height:0;
+}
+.wgal-item{
+  position:absolute;
+  width:100px;height:133px;
+  margin-left:-50px;
+  margin-top:-207px;
+  transform-origin:50px 207px;
+  transform:rotate(calc(var(--i) * 60deg));
+}
+.wgal-spoke{
+  position:absolute;
+  top:133px;left:50%;
+  width:1.5px;height:74px;
+  background:linear-gradient(to bottom,rgba(194,168,152,0.22),transparent);
+  transform:translateX(-50%);
+}
+.wgal-card{
+  position:absolute;
+  width:100px;height:133px;
+  border-radius:14px;overflow:hidden;
+  border:2.5px solid rgba(255,255,255,0.90);
+  box-shadow:0 8px 28px rgba(194,168,152,0.18),0 2px 6px rgba(0,0,0,0.07);
+  background:rgba(255,248,246,0.5);
+  cursor:zoom-in;
+}
+.wgal-card img{width:100%;height:100%;object-fit:cover;display:block;}
+.wgal-hint{
+  text-align:center;margin-top:14px;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:13px;letter-spacing:3px;color:var(--accent);opacity:.55;
+}
+
+/* LIGHTBOX */
+#gal-lb{
+  position:fixed;inset:0;z-index:9500;
+  display:flex;align-items:center;justify-content:center;
+  visibility:hidden;opacity:0;cursor:zoom-out;
+}
+#gal-lb-bg{
+  position:absolute;inset:0;
+  background:rgba(28,16,10,0.82);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+}
+#gal-lb-img{
+  position:relative;z-index:1;
+  max-width:88vw;max-height:82vh;
+  object-fit:contain;border-radius:22px;
+  border:3px solid rgba(255,255,255,0.88);
+  box-shadow:0 28px 80px rgba(0,0,0,0.55),0 0 0 1px rgba(194,168,152,0.22);
+  transform-origin:center center;
+}
+#gal-lb-close{
+  position:absolute;top:22px;right:22px;z-index:2;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,0.14);border:1.5px solid rgba(255,255,255,0.30);
+  color:#fff;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  transition:background 0.2s;
+}
+#gal-lb-close:hover{background:rgba(255,255,255,0.26);}
+
+/* KIDS POLICY */
+.kids-card{
+  text-align:center;padding:36px 28px;
+  background:linear-gradient(145deg,rgba(255,255,255,0.82),rgba(255,248,246,0.95));
+  border-radius:26px;
+  border:1px solid rgba(194,168,152,0.14);
+  box-shadow:0 8px 36px rgba(194,168,152,0.08);
+}
+.kids-icon{
+  width:58px;height:58px;border-radius:50%;margin:0 auto 18px;
+  background:linear-gradient(135deg,rgba(194,168,152,0.14),rgba(255,224,216,0.28));
+  border:1.5px solid rgba(194,168,152,0.28);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 18px rgba(194,168,152,0.14);
+}
+.kids-title{
+  font-family:'Great Vibes',cursive;font-size:42px;color:var(--dark);margin-bottom:14px;
+}
+.kids-text{
+  font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;
+  color:var(--text);line-height:1.75;opacity:.78;
+}
+
+/* MESA DE REGALOS */
+.gift2-envelope{
+  width:100%;text-align:center;padding:30px 24px;
+  background:linear-gradient(145deg,rgba(255,224,216,0.10),rgba(194,168,152,0.08));
+  border-radius:26px;border:1px solid rgba(255,224,216,0.22);
+  box-shadow:0 6px 28px rgba(255,224,216,0.08);
+}
+.gift2-env-icon{
+  width:58px;height:58px;border-radius:50%;margin:0 auto 14px;
+  background:linear-gradient(135deg,rgba(255,224,216,0.22),rgba(194,168,152,0.28));
+  border:1.5px solid rgba(255,224,216,0.35);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(255,224,216,0.16);
+}
+.gift2-env-title{font-family:'Great Vibes',cursive;font-size:38px;color:var(--dark);margin-bottom:10px;}
+.gift2-env-sub{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:17px;color:var(--text);opacity:.68;line-height:1.65;
+}
+.gift2-env-sep{
+  width:36px;height:1px;margin:14px auto;
+  background:linear-gradient(90deg,transparent,rgba(255,224,216,0.55),transparent);
+}
+.gift2-env-desc{
+  font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;
+  color:rgba(46,31,26,.55);line-height:1.75;letter-spacing:.3px;
+}
+
+/* ALBUM */
+.album-card{
+  text-align:center;padding:36px 28px;
+  background:linear-gradient(155deg,#1a1210 0%,#241814 55%,#1a1210 100%);
+  border-radius:26px;
+  border:1px solid rgba(200,168,122,0.16);
+  box-shadow:0 14px 56px rgba(0,0,0,0.28);
+  position:relative;overflow:hidden;
+}
+.album-card::before{
+  content:'';position:absolute;top:-1px;left:20%;right:20%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold) 40%,var(--gold-soft) 60%,transparent);
+  opacity:.55;
+}
+.album-icon{
+  width:58px;height:58px;border-radius:50%;margin:0 auto 16px;
+  background:linear-gradient(135deg,rgba(200,168,122,0.18),rgba(232,212,184,0.28));
+  border:1.5px solid rgba(200,168,122,0.32);
+  display:flex;align-items:center;justify-content:center;
+}
+.album-title{
+  font-family:'Great Vibes',cursive;font-size:42px;color:#fff;margin-bottom:10px;
+  filter:drop-shadow(0 2px 10px rgba(200,168,122,0.35));
+}
+.album-text{
+  font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;font-weight:400;
+  color:rgba(255,248,246,0.70);line-height:1.75;margin-bottom:22px;
+}
+.album-qr{
+  width:130px;height:130px;border-radius:14px;margin:0 auto 18px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(200,168,122,0.22);
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* RSVP */
+.rsvp-card{
+  background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(194,168,152,0.18);border-radius:24px;padding:28px 24px;
+  box-shadow:0 4px 20px rgba(194,168,152,0.08);
+  text-align:center;
+}
+.rsvp-deadline{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:14px;color:var(--accent);letter-spacing:2px;margin-bottom:20px;
+}
+.rsvp-intro{
+  font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;
+  color:var(--text);line-height:1.7;opacity:.72;margin-bottom:22px;
+}
+.btn-rsvp{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:16px;min-height:52px;
+  background:linear-gradient(135deg,var(--accent),var(--dark));
+  color:#fff;border-radius:30px;border:none;cursor:pointer;
+  font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:3px;
+  transition:opacity .3s,transform .3s;
+  box-shadow:0 6px 28px rgba(194,168,152,0.32);
+}
+.btn-rsvp:hover{opacity:.88;transform:translateY(-2px);}
+
+/* FOOTER */
+footer{padding:50px 20px;text-align:center;}
+footer .fn{
+  font-family:'Great Vibes',cursive;font-size:50px;
+  background:linear-gradient(135deg,var(--accent),var(--blush),var(--dark));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+footer .fd{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-top:6px;
+}
+footer .credit{
+  margin-top:22px;
+  font-family:'Lato',sans-serif;font-size:10px;letter-spacing:1.5px;
+  color:rgba(46,31,26,0.32);
+}
+footer .credit a{color:inherit;text-decoration:none;}
+
+/* MUSICA FAB */
+.music-fab{
+  position:fixed;bottom:24px;right:24px;z-index:998;
+  width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;
+  background:linear-gradient(135deg,var(--accent),var(--dark));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(194,168,152,0.42);
+  animation:fabpulse 2.8s infinite ease-out;
+}
+@keyframes fabpulse{
+  0%{box-shadow:0 0 0 0 rgba(194,168,152,.50);}
+  70%{box-shadow:0 0 0 18px rgba(194,168,152,0);}
+  100%{box-shadow:0 0 0 0 rgba(194,168,152,0);}
+}
+.music-fab svg{width:24px;height:24px;}
+</style>
+</head>
+<body>
+
+<!-- ENVELOPE -->
+<div id="envelope-screen" role="button" aria-label="Toca para abrir tu invitacion">
+  <!-- PENDIENTE: subir sobre.png propio a Supabase path fotos-clientes/xv-daphne/sobre.png -->
+  <img id="env-image" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/assets/sobre.png" alt="Invitaci&oacute;n Daphne Paola" style="filter:hue-rotate(310deg) saturate(0.6)">
+  <!-- PENDIENTE: subir apertura.mp4 propio -->
+  <video id="env-video" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/assets/sobre-apertura.mp4" playsinline webkit-playsinline muted preload="auto"></video>
+  <p class="envelope-hint" id="env-hint">Toca para abrir</p>
+</div>
+<div id="env-flash"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-name" id="ldName"></div>
+  <div class="ld-tag" id="ldTag">Sus XV A&ntilde;os &middot; 8 Agosto 2026</div>
+</div>
+
+<div class="wrap" style="visibility:hidden">
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-bg"></div>
+    <div class="hero-veil"></div>
+    <div class="hero-bottom">
+      <h1 class="hero-name" id="hNm">Daphne Paola</h1>
+      <div class="hero-sub" id="hSb">
+        <span class="xv-num">XV</span>
+        <span class="xv-anos">A&ntilde;os</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORNAMENTO -->
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- FECHA -->
+  <div class="fecha-sec rv">
+    <div class="fecha-line">
+      <div class="fl-bar"></div>
+      <div class="fecha-txt">8 &middot; Agosto &middot; MMXXVI</div>
+      <div class="fl-bar right"></div>
+    </div>
+  </div>
+
+  <!-- INTRO — Frase inicial -->
+  <section style="padding:0;" id="sintro">
+    <div class="intro-wrap rv">
+      <p class="intro-text">
+        <span class="intro-drop">H</span>ay instantes que la vida nos regala una sola vez.
+        Con el coraz&oacute;n lleno de gratitud y alegr&iacute;a, el honor de tu presencia se solicita
+        para acompa&ntilde;ar a <strong>Daphne Paola</strong> en la celebraci&oacute;n de sus quince a&ntilde;os
+        &mdash; el inicio de un nuevo cap&iacute;tulo colmado de sue&ntilde;os y bendiciones.
+        Tu presencia iluminar&aacute; este d&iacute;a tan especial.
+      </p>
+      <span class="intro-firma">Daphne Paola</span>
+    </div>
+  </section>
+
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <section id="scd">
+    <h2 class="sec-title rv">Cuenta Regresiva</h2>
+    <div class="cd2-container">
+      <div class="cd2-grid">
+        <div class="cd2-unit cd2-rv">
+          <div class="cd2-ring-wrap">
+            <svg viewBox="0 0 120 120">
+              <circle class="cd2-ring-bg" cx="60" cy="60" r="50"/>
+              <circle class="cd2-ring-glow" cx="60" cy="60" r="50" stroke="#c2a898" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)" data-ring="d"/>
+              <circle class="cd2-ring-progress" cx="60" cy="60" r="50" stroke="#c2a898" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)" data-ring="d"/>
+            </svg>
+            <div class="cd2-value"><div class="cd2-num" id="cdD">000</div><div class="cd2-lbl">D&iacute;as</div></div>
+          </div>
+        </div>
+        <div class="cd2-unit cd2-rv">
+          <div class="cd2-ring-wrap">
+            <svg viewBox="0 0 120 120">
+              <circle class="cd2-ring-bg" cx="60" cy="60" r="50"/>
+              <circle class="cd2-ring-glow" cx="60" cy="60" r="50" stroke="#c2c2c2" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)" data-ring="h"/>
+              <circle class="cd2-ring-progress" cx="60" cy="60" r="50" stroke="#c2c2c2" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)" data-ring="h"/>
+            </svg>
+            <div class="cd2-value"><div class="cd2-num" id="cdH">00</div><div class="cd2-lbl">Horas</div></div>
+          </div>
+        </div>
+        <div class="cd2-unit cd2-rv">
+          <div class="cd2-ring-wrap">
+            <svg viewBox="0 0 120 120">
+              <circle class="cd2-ring-bg" cx="60" cy="60" r="50"/>
+              <circle class="cd2-ring-glow" cx="60" cy="60" r="50" stroke="#ffe0d8" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)" data-ring="m"/>
+              <circle class="cd2-ring-progress" cx="60" cy="60" r="50" stroke="#ffe0d8" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)" data-ring="m"/>
+            </svg>
+            <div class="cd2-value"><div class="cd2-num" id="cdM">00</div><div class="cd2-lbl">Minutos</div></div>
+          </div>
+        </div>
+        <div class="cd2-unit cd2-rv">
+          <div class="cd2-ring-wrap">
+            <svg viewBox="0 0 120 120">
+              <circle class="cd2-ring-bg" cx="60" cy="60" r="50"/>
+              <circle class="cd2-ring-glow" cx="60" cy="60" r="50" stroke="#c8a87a" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)" data-ring="s"/>
+              <circle class="cd2-ring-progress" cx="60" cy="60" r="50" stroke="#c8a87a" stroke-dasharray="314.16" stroke-dashoffset="314.16" transform="rotate(-90 60 60)" data-ring="s"/>
+            </svg>
+            <div class="cd2-value"><div class="cd2-num" id="cdS">00</div><div class="cd2-lbl">Segundos</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="cd2-quote">
+        <p>Cada segundo m&aacute;s cerca de este d&iacute;a tan especial</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- UBICACION — Dos venues distintos -->
+  <section id="subic">
+    <div class="eyebrow eyebrow-gold rv">D&oacute;nde celebraremos</div>
+    <h2 class="sec-title rv">Ubicaci&oacute;n</h2>
+    <div class="loc-grid">
+
+      <!-- Misa de XV -->
+      <div class="loc1-card rv">
+        <div class="loc1-top">
+          <div class="loc1-pin">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="loc1-label">Ceremonia Religiosa</div>
+          <div class="loc1-time">5:30 <span style="font-size:18px;letter-spacing:3px;">PM</span></div>
+          <!-- PENDIENTE: confirmar nombre del templo con el cliente -->
+          <div class="loc1-addr">Templo &mdash; Guadalajara, Jalisco<br><em style="font-size:13px;opacity:.55;">(nombre del templo por confirmar)</em></div>
+          <div class="loc1-hsep"></div>
+        </div>
+        <div class="loc1-cta">
+          <a class="btn" href="https://maps.app.goo.gl/z2JyAYTQercLkMmF7?g_st=ic" target="_blank" rel="noopener">
+            C&oacute;mo Llegar
+          </a>
+        </div>
+        <iframe class="loc1-map"
+          src="https://maps.google.com/maps?q=Guadalajara,Jalisco,Mexico&output=embed&hl=es"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <!-- Recepción -->
+      <div class="loc1-card rv">
+        <div class="loc1-top">
+          <div class="loc1-pin">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="loc1-label">Recepci&oacute;n</div>
+          <div class="loc1-time">8:00 <span style="font-size:18px;letter-spacing:3px;">PM</span></div>
+          <!-- PENDIENTE: confirmar nombre del salón con el cliente -->
+          <div class="loc1-addr">Sal&oacute;n &mdash; Guadalajara, Jalisco<br><em style="font-size:13px;opacity:.55;">(nombre del sal&oacute;n por confirmar)</em></div>
+          <div class="loc1-hsep"></div>
+        </div>
+        <div class="loc1-cta">
+          <a class="btn" href="https://maps.app.goo.gl/x1h6EYERghTJrM3j8?g_st=ic" target="_blank" rel="noopener">
+            C&oacute;mo Llegar
+          </a>
+        </div>
+        <iframe class="loc1-map"
+          src="https://maps.google.com/maps?q=Guadalajara,Jalisco,Mexico&output=embed&hl=es"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALENDAR -->
+  <section class="rv cal-c" id="scal">
+    <div class="eyebrow">No lo olvides</div>
+    <h2 class="sec-title">Gu&aacute;rdalo</h2>
+    <p>Agrega el evento a tu calendario para no olvidarlo</p>
+    <a class="btn" id="gcalBtn" href="#" target="_blank">A&ntilde;adir a Google Calendar</a>
+  </section>
+
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- ITINERARIO -->
+  <section id="siti">
+    <div class="eyebrow eyebrow-silver rv">Programa del D&iacute;a</div>
+    <h2 class="sec-title rv">Itinerario</h2>
+    <div class="itv3">
+      <div class="itv3-track"></div>
+      <div class="itv3-glow" id="itvGlow"></div>
+
+      <div class="itv3-item rv">
+        <div class="itv3-gem itv3-gem-gold"></div>
+        <div class="itv3-time">5:30</div>
+        <div class="itv3-ev">Misa de XV A&ntilde;os</div>
+      </div>
+      <div class="itv3-item rv">
+        <div class="itv3-gem itv3-gem-silver"></div>
+        <div class="itv3-time">8:00</div>
+        <div class="itv3-ev">Recepci&oacute;n</div>
+      </div>
+      <div class="itv3-item rv">
+        <div class="itv3-gem"></div>
+        <div class="itv3-time">9:00</div>
+        <div class="itv3-ev">Cena</div>
+      </div>
+      <div class="itv3-item rv">
+        <div class="itv3-gem itv3-gem-gold"></div>
+        <div class="itv3-time">10:00</div>
+        <div class="itv3-ev">Vals</div>
+      </div>
+      <div class="itv3-item rv">
+        <div class="itv3-gem itv3-gem-silver"></div>
+        <div class="itv3-time">2:00</div>
+        <div class="itv3-ev">Hasta Pronto</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- DRESS CODE -->
+  <section class="rv" id="sdc">
+    <div class="dc2-wrap">
+      <div class="dc2-eyebrow">Etiqueta</div>
+      <div class="dc2-title">Dress Code</div>
+      <div class="dc2-formal">Formal en Negro</div>
+      <div class="dc2-strip">
+        <span style="background:#0d0d0d;"></span>
+        <span style="background:#1a1a1a;"></span>
+        <span style="background:#2e2e2e;"></span>
+      </div>
+      <div class="dc2-palette" id="swatches">
+        <div class="dc2-swatch"><div class="ds-circle" style="background:#0d0d0d;border-color:rgba(255,255,255,0.20);"></div><div class="ds-name">Negro</div></div>
+        <div class="dc2-swatch"><div class="ds-circle" style="background:#2e2e2e;"></div><div class="ds-name">Carb&oacute;n</div></div>
+        <div class="dc2-swatch"><div class="ds-circle" style="background:#1a1a1a;"></div><div class="ds-name">Ébano</div></div>
+      </div>
+      <div class="dc2-avoid">
+        <p>Les pedimos amablemente vestir en tonos negros.<br>Eviten colores llamativos o blancos.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- FAMILIA -->
+  <section id="sfam">
+    <div class="eyebrow eyebrow-gold rv">Con la Bendici&oacute;n de</div>
+    <h2 class="sec-title rv">Mi Familia</h2>
+    <div class="fam2">
+
+      <div class="fam2-group rv">
+        <div class="fam2-medallion">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="fam2-role">Mis Padres</div>
+        <div class="fam2-names">
+          Carlos Enrique Villarruel Vargas
+          <span class="fam2-amp">&amp;</span>
+          Mayra Paola Monta&ntilde;o Mart&iacute;n
+        </div>
+      </div>
+
+      <div class="fam2-divider rv">
+        <svg viewBox="0 0 100 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="13" x2="32" y2="13" stroke="#c8a87a" stroke-width="0.7" opacity="0.32"/>
+          <path d="M32 13 Q38 5 44 13" stroke="#c8a87a" stroke-width="0.8" fill="none" opacity="0.44"/>
+          <path d="M50 4 L57 13 L50 22 L43 13 Z" fill="rgba(200,168,122,0.10)" stroke="#c8a87a" stroke-width="0.9" opacity="0.48"/>
+          <circle cx="50" cy="13" r="3" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.6" opacity="0.55"/>
+          <path d="M56 13 Q62 5 68 13" stroke="#c8a87a" stroke-width="0.8" fill="none" opacity="0.44"/>
+          <line x1="68" y1="13" x2="100" y2="13" stroke="#c8a87a" stroke-width="0.7" opacity="0.32"/>
+        </svg>
+      </div>
+
+      <div class="fam2-group rv" style="border-top:none;">
+        <div class="fam2-medallion" style="background:linear-gradient(135deg,rgba(194,194,194,0.14),rgba(225,225,225,0.26));border-color:rgba(194,194,194,0.32);">
+          <svg viewBox="0 0 24 24" style="stroke:var(--silver)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="fam2-role" style="color:var(--silver)">Mis Padrinos</div>
+        <div class="fam2-names">
+          Christian Andr&eacute;s Monta&ntilde;o Mart&iacute;n
+          <span class="fam2-amp" style="color:var(--silver)">&amp;</span>
+          Vanessa Estefan&iacute;a Monta&ntilde;o Mart&iacute;n
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- GALERIA -->
+  <section id="sgal">
+    <div class="eyebrow eyebrow-silver rv">Momentos</div>
+    <h2 class="sec-title rv">Galer&iacute;a</h2>
+    <!-- PENDIENTE: fotos reales de Daphne — reemplazar los divs de placeholder -->
+    <div class="wgal-scene">
+      <div class="wgal-rim"></div>
+      <div class="wgal-hub"></div>
+      <div class="wgal-wheel" id="photoWheel">
+        <div class="wgal-item" style="--i:0">
+          <div class="wgal-spoke"></div>
+          <div class="wgal-card">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#ffe0d8,#f5d0c4);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Great Vibes',cursive;font-size:32px;color:var(--dark);opacity:.45;">D</span>
+            </div>
+          </div>
+        </div>
+        <div class="wgal-item" style="--i:1">
+          <div class="wgal-spoke"></div>
+          <div class="wgal-card">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#e8d4c0,#ffe0d8);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Great Vibes',cursive;font-size:32px;color:var(--dark);opacity:.45;">P</span>
+            </div>
+          </div>
+        </div>
+        <div class="wgal-item" style="--i:2">
+          <div class="wgal-spoke"></div>
+          <div class="wgal-card">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#f0e0d8,#e8c8b8);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Great Vibes',cursive;font-size:32px;color:var(--dark);opacity:.45;">XV</span>
+            </div>
+          </div>
+        </div>
+        <div class="wgal-item" style="--i:3">
+          <div class="wgal-spoke"></div>
+          <div class="wgal-card">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#ffe0d8,#f5d0c4);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Great Vibes',cursive;font-size:32px;color:var(--dark);opacity:.45;">D</span>
+            </div>
+          </div>
+        </div>
+        <div class="wgal-item" style="--i:4">
+          <div class="wgal-spoke"></div>
+          <div class="wgal-card">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#e8d4c0,#ffe0d8);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Great Vibes',cursive;font-size:32px;color:var(--dark);opacity:.45;">P</span>
+            </div>
+          </div>
+        </div>
+        <div class="wgal-item" style="--i:5">
+          <div class="wgal-spoke"></div>
+          <div class="wgal-card">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#f0e0d8,#e8c8b8);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Great Vibes',cursive;font-size:32px;color:var(--dark);opacity:.45;">XV</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wgal-hint rv">Scrollea para girar la rueda</div>
+  </section>
+
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- KIDS POLICY — OBLIGATORIA -->
+  <section class="rv" id="skids">
+    <div class="eyebrow">Una nota importante</div>
+    <h2 class="sec-title rv">Solo Adultos</h2>
+    <div class="kids-card rv">
+      <div class="kids-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </div>
+      <div class="kids-title">Con Cari&ntilde;o</div>
+      <p class="kids-text">
+        Con todo el amor, hemos decidido que esta noche sea exclusiva para adultos.
+        Confiamos en que puedas disfrutar con nosotros sin preocupaciones.
+        ¡Gracias infinitas por tu comprensi&oacute;n y cari&ntilde;o!
+      </p>
+    </div>
+  </section>
+
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- MESA DE REGALOS — OBLIGATORIA -->
+  <section class="rv" id="sgifts">
+    <div class="eyebrow">Con Cari&ntilde;o</div>
+    <h2 class="sec-title rv">Mesa de Regalos</h2>
+    <p style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;font-weight:400;color:var(--text);opacity:.70;line-height:1.75;margin-bottom:28px;">
+      Tu presencia es el regalo m&aacute;s valioso.<br>
+      Si deseas obsequiarnos algo, con mucho cari&ntilde;o compartimos esta opci&oacute;n.
+    </p>
+    <div class="gift2-envelope rv">
+      <div class="gift2-env-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <div class="gift2-env-title">Lluvia de Sobres</div>
+      <div class="gift2-env-sub">Tu presencia ilumina el coraz&oacute;n<br>de Daphne Paola</div>
+      <div class="gift2-env-sep"></div>
+      <div class="gift2-env-desc">
+        En el sal&oacute;n encontrar&aacute;s un buz&oacute;n decorado<br>
+        especialmente para esta noche &mdash; con todo tu<br>
+        cari&ntilde;o puedes depositar ah&iacute; tu sobre.
+      </div>
+    </div>
+  </section>
+
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- ALBUM — OBLIGATORIA -->
+  <section class="rv" id="salbum">
+    <div class="eyebrow eyebrow-gold rv">Comparte el Momento</div>
+    <h2 class="sec-title sec-title-gold rv">&Aacute;lbum Compartido</h2>
+    <div class="album-card rv">
+      <div class="album-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </div>
+      <div class="album-title">Fotos &amp; Recuerdos</div>
+      <p class="album-text">
+        Despu&eacute;s del evento, sube tus fotos y videos<br>
+        al &aacute;lbum compartido. Ser&aacute; nuestro<br>
+        recuerdo colectivo de este d&iacute;a tan especial.
+      </p>
+      <!-- PENDIENTE: link álbum real de Daphne — reemplazar href y QR cuando lo tenga -->
+      <div class="album-qr">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(200,168,122,0.45)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="16" y="3" width="5" height="5"/><rect x="3" y="16" width="5" height="5"/><rect x="14" y="14" width="2" height="2"/><rect x="18" y="14" width="2" height="2"/><rect x="14" y="18" width="2" height="2"/><rect x="18" y="18" width="2" height="2"/></svg>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:2px;color:rgba(200,168,122,0.45);text-transform:uppercase;">Por confirmar</span>
+        </div>
+      </div>
+      <a class="btn" href="#" style="background:linear-gradient(135deg,var(--gold),#a88860);" onclick="return false;">
+        Ver &Aacute;lbum
+      </a>
+    </div>
+  </section>
+
+  <div class="orn rv">
+    <svg viewBox="0 0 300 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="20" x2="96" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="0" y1="23" x2="88" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+      <path d="M96 21.5 Q104 7 116 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <path d="M122 21.5 L126.5 15.5 L131 21.5 L126.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M150 6 L165 21.5 L150 37 L135 21.5 Z" fill="rgba(194,168,152,0.09)" stroke="#c8a87a" stroke-width="1.05" opacity="0.50"/>
+      <circle cx="150" cy="21.5" r="4.5" fill="rgba(232,212,184,0.22)" stroke="#c8a87a" stroke-width="0.7" opacity="0.58"/>
+      <path d="M169 21.5 L173.5 15.5 L178 21.5 L173.5 27.5 Z" fill="#ffe0d8" fill-opacity="0.40" stroke="#ffe0d8" stroke-width="0.4" opacity="0.5"/>
+      <path d="M184 21.5 Q196 7 204 21.5" stroke="#c8a87a" stroke-width="0.95" fill="none" opacity="0.46"/>
+      <line x1="204" y1="20" x2="300" y2="20" stroke="#c2c2c2" stroke-width="0.85" opacity="0.34"/>
+      <line x1="212" y1="23" x2="300" y2="23" stroke="#c2c2c2" stroke-width="0.38" opacity="0.16"/>
+    </svg>
+  </div>
+
+  <!-- RSVP -->
+  <section class="rv" id="srsvp">
+    <div class="eyebrow eyebrow-silver">Conf&iacute;rmanos tu Asistencia</div>
+    <h2 class="sec-title rv">R.S.V.P.</h2>
+    <div class="rsvp-card rv">
+      <div class="rsvp-deadline">Fecha l&iacute;mite: 15 de julio de 2026</div>
+      <p class="rsvp-intro">
+        Conf&iacute;rmanos tu asistencia antes del<br>
+        <strong>15 de julio de 2026</strong> &mdash; con mucho gusto te esperamos.
+      </p>
+      <!-- PENDIENTE: reemplazar WA_NUM con el número real del cliente -->
+      <button class="btn-rsvp" id="rsvpBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Confirmar Asistencia
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER — OBLIGATORIA -->
+  <footer>
+    <div class="fn">Daphne Paola</div>
+    <div class="fd">8 &middot; Agosto &middot; MMXXVI &middot; Guadalajara</div>
+    <div style="width:50px;height:1px;margin:18px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.4;"></div>
+    <p class="credit">Dise&ntilde;o por <a href="https://instagram.com/elysium.invitaciones" target="_blank" rel="noopener">@elysium.invitaciones</a></p>
+  </footer>
+
+</div><!-- /wrap -->
+
+<!-- LIGHTBOX -->
+<div id="gal-lb">
+  <div id="gal-lb-bg"></div>
+  <img id="gal-lb-img" src="" alt="Foto galer&iacute;a">
+  <button id="gal-lb-close" aria-label="Cerrar">&#x2715;</button>
+</div>
+
+<!-- MUSICA — audio en Supabase, NUNCA en /public -->
+<!-- PENDIENTE: procesar canción (https://youtu.be/GuJQSAiODqI) y subir a Supabase -->
+<button class="music-fab" id="musicFab" aria-label="Reproducir m&uacute;sica">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+</button>
+<audio id="bgAudio" loop preload="none">
+  <source src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/xv-daphne/cancion.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.scrollTo(0,0);
+history.scrollRestoration='manual';
+gsap.registerPlugin(ScrollTrigger);
+
+/* ENVELOPE */
+(function(){
+  var envScreen=document.getElementById('envelope-screen');
+  var envImage=document.getElementById('env-image');
+  var envVideo=document.getElementById('env-video');
+  var hint=document.getElementById('env-hint');
+  var opened=false;
+  var invitationReady=false;
+
+  gsap.timeline()
+    .to(envScreen,{opacity:1,duration:1.2,ease:'power2.out',delay:0.3})
+    .to(hint,{opacity:1,duration:0.9,ease:'power2.out'},'-=0.5');
+
+  function revealInvitation(){
+    if(invitationReady)return;
+    invitationReady=true;
+    gsap.to(envScreen,{opacity:0,duration:0.9,ease:'power2.inOut',
+      onComplete:function(){envScreen.style.display='none';}});
+    document.querySelector('.wrap').style.visibility='visible';
+    launchPage();
+    var audio=document.getElementById('bgAudio');
+    if(audio){
+      audio.volume=0;
+      audio.play().then(function(){
+        gsap.to(audio,{volume:1,duration:3.5,ease:'power1.inOut'});
+        playing=true;
+      }).catch(function(){});
+    }
+  }
+
+  var flashStarted=false;
+  envVideo.addEventListener('timeupdate',function(){
+    if(!flashStarted&&envVideo.duration&&envVideo.currentTime>=envVideo.duration-0.5){
+      flashStarted=true;revealInvitation();
+    }
+  });
+  envVideo.addEventListener('ended',function(){
+    if(!flashStarted){flashStarted=true;revealInvitation();}
+  });
+
+  function openEnvelope(){
+    if(opened)return;
+    opened=true;
+    gsap.to(hint,{opacity:0,duration:0.2});
+    var playPromise=envVideo.play();
+    gsap.to(envImage,{opacity:0,duration:0.55,ease:'power2.inOut',
+      onComplete:function(){envImage.style.display='none';}});
+    gsap.to(envVideo,{opacity:1,duration:0.55,ease:'power2.inOut'});
+    if(playPromise!==undefined){playPromise.catch(function(){revealInvitation();});}
+  }
+
+  envScreen.addEventListener('click',openEnvelope);
+  envScreen.addEventListener('touchstart',function(e){e.preventDefault();openEnvelope();},{passive:false});
+}());
+
+/* LAUNCH */
+function launchPage(){
+  gsap.timeline({defaults:{ease:'power2.out'}})
+    .to('#hNm',{opacity:1,y:0,duration:1.8,ease:'power3.out'})
+    .to('#hSb',{opacity:1,y:0,duration:1.4},'-=1');
+  initScrollReveal();
+  initItinerary();
+  initWheelGallery();
+}
+
+/* SCROLL REVEAL */
+function initScrollReveal(){
+  document.querySelectorAll('.rv').forEach(function(el){
+    gsap.fromTo(el,{y:36,opacity:0},{y:0,opacity:1,duration:1.3,ease:'power2.out',
+      scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+}
+
+/* ITINERARIO */
+function initItinerary(){
+  var glow=document.getElementById('itvGlow');
+  var section=document.getElementById('siti');
+  var items=document.querySelectorAll('.itv3-item');
+  if(!glow||!section)return;
+  ScrollTrigger.create({
+    trigger:section,start:'top 58%',end:'bottom 42%',scrub:1.8,
+    onUpdate:function(self){
+      var track=section.querySelector('.itv3-track');
+      if(!track)return;
+      glow.style.top=(self.progress*(track.offsetHeight-55))+'px';
+    }
+  });
+  items.forEach(function(item){
+    var gem=item.querySelector('.itv3-gem');
+    gsap.fromTo(gem,{scale:0,opacity:0},{scale:1,opacity:1,duration:0.6,ease:'back.out(2.8)',
+      scrollTrigger:{trigger:item,start:'top 86%',once:true}});
+    gsap.fromTo([item.querySelector('.itv3-time'),item.querySelector('.itv3-ev')],
+      {y:14,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power2.out',stagger:0.08,
+      scrollTrigger:{trigger:item,start:'top 86%',once:true}});
+  });
+}
+
+/* COUNTDOWN — 8 agosto 2026 17:30 Guadalajara (UTC-6) */
+(function(){
+  var target=new Date('2026-08-08T17:30:00-06:00').getTime();
+  var C=314.16;
+  var ringsAnimated=false;
+  function setRing(type,fraction){
+    document.querySelectorAll('[data-ring="'+type+'"]').forEach(function(el){
+      el.setAttribute('stroke-dashoffset',C*(1-Math.min(fraction,1)));
+    });
+  }
+  function tick(){
+    var d=target-Date.now();
+    if(d<=0){['cdD','cdH','cdM','cdS'].forEach(function(id,i){
+      document.getElementById(id).textContent=i===0?'000':'00';});return;}
+    var days=Math.floor(d/86400000),hours=Math.floor(d%86400000/3600000),
+        mins=Math.floor(d%3600000/60000),secs=Math.floor(d%60000/1000);
+    document.getElementById('cdD').textContent=String(days).padStart(3,'0');
+    document.getElementById('cdH').textContent=String(hours).padStart(2,'0');
+    document.getElementById('cdM').textContent=String(mins).padStart(2,'0');
+    document.getElementById('cdS').textContent=String(secs).padStart(2,'0');
+    if(ringsAnimated){
+      setRing('d',Math.min(days/365,1));setRing('h',hours/24);
+      setRing('m',mins/60);setRing('s',secs/60);
+    }
+  }
+  tick();setInterval(tick,1000);
+  ScrollTrigger.create({trigger:'#scd',start:'top 82%',once:true,onEnter:function(){
+    ringsAnimated=true;
+    gsap.fromTo('.cd2-rv',{scale:0.6,opacity:0},{scale:1,opacity:1,duration:1,stagger:0.15,ease:'back.out(2)'});
+    gsap.fromTo('.cd2-container',{y:30,opacity:0},{y:0,opacity:1,duration:1.2,ease:'power3.out'});
+    var d=target-Date.now();if(d>0){
+      var days=Math.floor(d/86400000),hours=Math.floor(d%86400000/3600000),
+          mins=Math.floor(d%3600000/60000),secs=Math.floor(d%60000/1000);
+      [{ring:'d',frac:Math.min(days/365,1)},{ring:'h',frac:hours/24},
+       {ring:'m',frac:mins/60},{ring:'s',frac:secs/60}].forEach(function(t,i){
+        document.querySelectorAll('[data-ring="'+t.ring+'"]').forEach(function(el){
+          gsap.fromTo(el,{attr:{'stroke-dashoffset':C}},
+            {attr:{'stroke-dashoffset':C*(1-t.frac)},duration:1.8,delay:i*0.15+0.3,ease:'power2.out'});
+        });
+      });
+    }
+  }});
+})();
+
+/* GOOGLE CALENDAR */
+(function(){
+  var t=encodeURIComponent('XV Años de Daphne Paola Villarruel Montaño');
+  var d=encodeURIComponent('Misa de XV Años: 5:30 PM | Recepción: 8:00 PM — Guadalajara, Jalisco');
+  var l=encodeURIComponent('Guadalajara, Jalisco, México');
+  document.getElementById('gcalBtn').href=
+    'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+t+'&dates=20260808T233000Z/20260809T080000Z&details='+d+'&location='+l;
+})();
+
+/* RSVP — Botón único WhatsApp */
+(function(){
+  /* PENDIENTE: reemplazar con número real del cliente cuando lo proporcione */
+  var WA_NUM='521XXXXXXXXXX';
+  var msg='¡Hola! Con mucho gusto confirmo mi asistencia a la celebración de Daphne Paola Villarruel Montaño. 🎉\n¡Nos vemos pronto! 💫';
+  document.getElementById('rsvpBtn').addEventListener('click',function(){
+    window.open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg),'_blank');
+  });
+})();
+
+/* GALERIA — Rueda scroll-driven */
+function initWheelGallery(){
+  var wheel=document.getElementById('photoWheel');
+  if(!wheel)return;
+  ScrollTrigger.create({trigger:'#sgal',start:'top 85%',once:true,onEnter:function(){
+    gsap.fromTo(wheel,{rotation:-15,opacity:0},{rotation:0,opacity:1,duration:1.4,ease:'power3.out'});
+    gsap.fromTo('.wgal-hint',{opacity:0,y:10},{opacity:1,y:0,duration:1.2,delay:0.8,ease:'power2.out'});
+  }});
+  gsap.to(wheel,{rotation:360,ease:'none',
+    scrollTrigger:{trigger:'#sgal',start:'top 70%',end:'bottom top',scrub:2}});
+  gsap.ticker.add(function(){
+    var rot=gsap.getProperty(wheel,'rotation')||0;
+    var norm=((rot%360)+360)%360;
+    document.querySelectorAll('.wgal-item').forEach(function(item,i){
+      var itemAngle=((i*60-norm)%360+360)%360;
+      var dist=Math.min(itemAngle,360-itemAngle);
+      var scale=dist<50?gsap.utils.mapRange(0,50,1.08,1,dist):1;
+      var shadow=dist<60?'0 14px 38px rgba(194,168,152,0.35)':'0 5px 18px rgba(194,168,152,0.12)';
+      var card=item.querySelector('.wgal-card');
+      if(card){card.style.boxShadow=shadow;card.style.transform='scale('+scale+')';}
+    });
+  });
+}
+
+/* LIGHTBOX */
+(function(){
+  var lb=document.getElementById('gal-lb'),lbImg=document.getElementById('gal-lb-img');
+  var lbClose=document.getElementById('gal-lb-close'),isOpen=false;
+  function openLb(src,originEl){
+    if(isOpen)return;isOpen=true;lbImg.src=src;
+    var r=originEl.getBoundingClientRect();
+    var ox=(r.left+r.right)/2-window.innerWidth/2,oy=(r.top+r.bottom)/2-window.innerHeight/2;
+    gsap.set(lb,{autoAlpha:0});gsap.set(lbImg,{scale:0.15,x:ox,y:oy,opacity:0});
+    gsap.to(lb,{autoAlpha:1,duration:0.28,ease:'power2.out'});
+    gsap.to(lbImg,{scale:1,x:0,y:0,opacity:1,duration:0.48,ease:'back.out(1.3)'});
+  }
+  function closeLb(){
+    if(!isOpen)return;isOpen=false;
+    gsap.to(lbImg,{scale:0.85,opacity:0,duration:0.22,ease:'power2.in'});
+    gsap.to(lb,{autoAlpha:0,duration:0.28,ease:'power2.in',onComplete:function(){lbImg.src='';}});
+  }
+  document.querySelectorAll('.wgal-card').forEach(function(card){
+    card.addEventListener('click',function(e){
+      e.stopPropagation();
+      var img=card.querySelector('img');if(img&&img.src)openLb(img.src,card);
+    });
+  });
+  lb.addEventListener('click',closeLb);
+  lbClose.addEventListener('click',function(e){e.stopPropagation();closeLb();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+})();
+
+/* MUSICA */
+var fab=document.getElementById('musicFab'),audio=document.getElementById('bgAudio');
+var playing=false;
+fab.addEventListener('click',function(){
+  playing=!playing;
+  if(playing){audio.play().catch(function(){});fab.style.background='var(--dark)';}
+  else{audio.pause();fab.style.background='';}
+});
+</script>
+</body>
+</html>
