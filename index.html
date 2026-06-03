@@ -397,133 +397,64 @@ section{padding:64px 26px;}
 .cal-c{text-align:center;}
 .cal-c p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:17px;color:var(--dark);margin-bottom:18px;}
 
-/* ITINERARIO */
-#siti{overflow:visible;padding-left:24px;padding-right:24px;}
-.itv3{
-  position:relative;
-  display:flex;flex-direction:column;align-items:center;
-  padding:10px 0 10px;
+/* ITINERARIO — Cards con iconos ilustrados */
+#siti{padding:64px 20px;}
+.itv4{
+  display:flex;flex-direction:column;gap:18px;
+  max-width:380px;margin:0 auto;
 }
-.itv3-track{
-  position:absolute;left:50%;transform:translateX(-50%);
-  top:0;bottom:0;width:1px;z-index:0;
-  background:linear-gradient(to bottom,
-    transparent 0%,
-    rgba(194,194,194,0.30) 10%,
-    rgba(194,168,152,0.22) 45%,
-    rgba(255,224,216,0.38) 80%,
-    transparent 100%);
+.itv4-card{
+  display:flex;align-items:center;gap:16px;
+  padding:20px 22px;
+  background:linear-gradient(145deg,rgba(255,255,255,0.82),rgba(255,248,246,0.95));
+  border:1px solid rgba(194,168,152,0.14);
+  border-radius:20px;
+  box-shadow:0 6px 28px rgba(194,168,152,0.08);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
 }
-.itv3-glow{
-  position:absolute;left:50%;transform:translateX(-50%);
-  top:0;width:5px;height:110px;
-  background:linear-gradient(to bottom,
-    transparent,
-    rgba(194,194,194,0.6) 20%,
-    rgba(194,168,152,0.9) 50%,
-    rgba(255,224,216,0.6) 80%,
-    transparent);
-  filter:blur(3px);border-radius:6px;
-  z-index:1;pointer-events:none;
+.itv4-icon{
+  width:56px;height:56px;flex-shrink:0;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(255,224,216,0.25),rgba(194,168,152,0.15));
+  border:1.5px solid rgba(194,168,152,0.22);
+  box-shadow:0 3px 12px rgba(194,168,152,0.12);
 }
-.itv3-item{
-  position:relative;z-index:2;
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;padding:30px 16px 4px;width:100%;
+.itv4-icon svg{width:26px;height:26px;}
+.itv4-info{flex:1;min-width:0;}
+.itv4-time{
+  font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;
+  color:var(--dark);line-height:1;letter-spacing:3px;
 }
-.itv3-gem{
-  width:9px;height:9px;
-  background:linear-gradient(135deg,var(--blush) 30%,var(--dark));
-  transform:rotate(45deg);border-radius:2px;
-  box-shadow:0 0 0 4px rgba(194,168,152,0.10),0 0 18px rgba(194,168,152,0.40);
-  margin-bottom:18px;flex-shrink:0;
-}
-.itv3-gem-gold{
-  background:linear-gradient(135deg,var(--gold-soft) 30%,var(--gold));
-  box-shadow:0 0 0 4px rgba(200,168,122,0.12),0 0 18px rgba(200,168,122,0.42);
-}
-.itv3-gem-silver{
-  background:linear-gradient(135deg,#e0e0e0 30%,var(--silver));
-  box-shadow:0 0 0 4px rgba(194,194,194,0.12),0 0 18px rgba(194,194,194,0.42);
-}
-.itv3-time{
-  font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;
-  letter-spacing:8px;color:var(--dark);line-height:1;margin-bottom:6px;
-  text-indent:8px;
-}
-.itv3-ev{
+.itv4-label{
   font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
-  font-size:15px;color:rgba(46,31,26,0.55);
-  letter-spacing:3px;text-transform:uppercase;line-height:1.5;
-  text-indent:3px;
+  font-size:14px;color:var(--accent);
+  letter-spacing:2px;text-transform:uppercase;margin-top:4px;
 }
-.itv3-item:last-child{padding-bottom:10px;}
 
-/* DRESS CODE */
-.dc2-wrap{
-  position:relative;overflow:hidden;
-  background:linear-gradient(155deg,#1a1a1a 0%,#0d0d0d 55%,#1a1a1a 100%);
-  border-radius:28px;padding:36px 24px 32px;
-  box-shadow:0 18px 60px rgba(0,0,0,0.35);
-}
-.dc2-wrap::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse at 18% 18%,rgba(194,168,152,0.10) 0%,transparent 60%),
-    radial-gradient(ellipse at 82% 82%,rgba(255,224,216,0.06) 0%,transparent 60%);
-}
-.dc2-wrap::after{
-  content:'';position:absolute;top:-1px;left:18%;right:18%;height:2px;
-  background:linear-gradient(90deg,transparent,var(--accent) 30%,var(--silver) 70%,transparent);
-  opacity:.55;
-}
-.dc2-eyebrow{
-  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
-  font-size:11px;letter-spacing:6px;text-transform:uppercase;
-  color:rgba(200,168,122,0.65);text-align:center;margin-bottom:4px;position:relative;
-}
-.dc2-title{
+/* DRESS CODE — sin card, fondo claro */
+.dc-section{text-align:center;padding:64px 26px;}
+.dc-title{
   font-family:'Great Vibes',cursive;font-size:50px;
-  color:#fff;text-align:center;line-height:1.05;margin-bottom:6px;position:relative;
-  filter:drop-shadow(0 2px 14px rgba(194,168,152,0.38));
+  color:var(--dark);text-align:center;line-height:1.05;margin-bottom:8px;
 }
-.dc2-formal{
-  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;
-  letter-spacing:5px;text-transform:uppercase;
-  color:rgba(200,168,122,0.80);text-align:center;margin-bottom:22px;position:relative;
+.dc-subtitle{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:16px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--accent);text-align:center;margin-bottom:32px;
 }
-.dc2-strip{
-  display:flex;height:5px;border-radius:3px;overflow:hidden;margin-bottom:26px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.35);position:relative;
+.dc-figures{
+  display:flex;justify-content:center;align-items:flex-end;gap:28px;
+  margin:0 auto;max-width:340px;
 }
-.dc2-strip span{flex:1;}
-.dc2-palette{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;position:relative;}
-.dc2-swatch{text-align:center;}
-.dc2-swatch .ds-circle{
-  width:58px;height:58px;border-radius:50%;margin:0 auto 8px;
-  border:2px solid rgba(255,255,255,0.13);
-  box-shadow:0 5px 18px rgba(0,0,0,0.28);
+.dc-figure-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+  font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--accent);margin-top:10px;opacity:.8;
 }
-.dc2-swatch .ds-name{
-  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
-  font-size:12px;letter-spacing:2px;text-transform:uppercase;
-  color:rgba(255,255,255,0.55);
-}
-.dc2-avoid{
-  position:relative;text-align:center;padding:15px 18px;
-  border:1px solid rgba(255,224,216,0.18);border-radius:14px;
-  background:rgba(255,224,216,0.04);
-}
-.dc2-avoid::before{
-  content:'&#x2715;';position:absolute;top:-11px;left:50%;transform:translateX(-50%);
-  width:22px;height:22px;border-radius:50%;
-  background:#0d0d0d;border:1px solid rgba(255,224,216,0.28);
-  font-size:10px;line-height:22px;text-align:center;
-  color:rgba(255,224,216,0.60);
-}
-.dc2-avoid p{
-  font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;font-weight:400;
-  color:rgba(255,224,216,0.72);letter-spacing:1px;line-height:1.65;
+.dc-hairline{
+  width:60px;height:1px;margin:28px auto 0;
+  background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:.4;
 }
 
 /* FAMILIA */
@@ -1148,39 +1079,107 @@ footer .credit a{color:inherit;text-decoration:none;}
     </svg>
   </div>
 
-  <!-- ITINERARIO -->
+  <!-- ITINERARIO — Cards con iconos ilustrados -->
   <section id="siti">
-    <div class="eyebrow eyebrow-silver rv">Programa del D&iacute;a</div>
+    <div class="eyebrow eyebrow-gold rv">Programa del D&iacute;a</div>
     <h2 class="sec-title rv">Itinerario</h2>
-    <div class="itv3">
-      <div class="itv3-track"></div>
-      <div class="itv3-glow" id="itvGlow"></div>
+    <div class="itv4">
 
-      <div class="itv3-item rv">
-        <div class="itv3-gem itv3-gem-gold"></div>
-        <div class="itv3-time">5:30</div>
-        <div class="itv3-ev">Misa de XV A&ntilde;os</div>
+      <!-- Misa -->
+      <div class="itv4-card rv">
+        <div class="itv4-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L14 8H10L12 2Z" fill="var(--gold)" stroke="none" opacity=".6"/>
+            <path d="M6 22V12C6 10 8 8 12 8C16 8 18 10 18 12V22"/>
+            <line x1="6" y1="22" x2="18" y2="22"/>
+            <line x1="12" y1="2" x2="12" y2="8"/>
+            <line x1="9" y1="5" x2="15" y2="5"/>
+            <path d="M9 15H15" opacity=".5"/>
+            <path d="M8 18H16" opacity=".4"/>
+          </svg>
+        </div>
+        <div class="itv4-info">
+          <div class="itv4-time">5:30 PM</div>
+          <div class="itv4-label">Misa de XV A&ntilde;os</div>
+        </div>
       </div>
-      <div class="itv3-item rv">
-        <div class="itv3-gem itv3-gem-silver"></div>
-        <div class="itv3-time">8:00</div>
-        <div class="itv3-ev">Recepci&oacute;n</div>
+
+      <!-- Recepción -->
+      <div class="itv4-card rv">
+        <div class="itv4-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21H21" opacity=".5"/>
+            <path d="M5 21V14L12 10L19 14V21"/>
+            <rect x="9" y="16" width="6" height="5" rx="1" opacity=".4"/>
+            <path d="M12 10V7"/>
+            <circle cx="12" cy="6" r="1" fill="var(--gold)" stroke="none"/>
+            <path d="M8 14H16"/>
+          </svg>
+        </div>
+        <div class="itv4-info">
+          <div class="itv4-time">8:00 PM</div>
+          <div class="itv4-label">Recepci&oacute;n</div>
+        </div>
       </div>
-      <div class="itv3-item rv">
-        <div class="itv3-gem"></div>
-        <div class="itv3-time">9:00</div>
-        <div class="itv3-ev">Cena</div>
+
+      <!-- Cena -->
+      <div class="itv4-card rv">
+        <div class="itv4-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="14" r="7" opacity=".3" fill="var(--blush)" stroke="none"/>
+            <path d="M3 14H21"/>
+            <path d="M5 14C5 9 8 6 12 6C16 6 19 9 19 14"/>
+            <line x1="12" y1="14" x2="12" y2="20"/>
+            <line x1="8" y1="20" x2="16" y2="20"/>
+            <path d="M8 10Q10 8 12 10Q14 8 16 10" opacity=".4"/>
+          </svg>
+        </div>
+        <div class="itv4-info">
+          <div class="itv4-time">9:00 PM</div>
+          <div class="itv4-label">Cena</div>
+        </div>
       </div>
-      <div class="itv3-item rv">
-        <div class="itv3-gem itv3-gem-gold"></div>
-        <div class="itv3-time">10:00</div>
-        <div class="itv3-ev">Vals</div>
+
+      <!-- Vals -->
+      <div class="itv4-card rv">
+        <div class="itv4-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="7" r="2.5"/>
+            <circle cx="16" cy="6" r="2.5"/>
+            <path d="M9 10C9 10 6 13 7 18"/>
+            <path d="M9 10Q11 14 10 18"/>
+            <path d="M16 9C16 9 13 12 14 17"/>
+            <path d="M16 9Q18 13 17 17"/>
+            <path d="M10 13L14 11" stroke="var(--gold)" opacity=".6"/>
+            <circle cx="12" cy="4" r="0.5" fill="var(--gold)" stroke="none" opacity=".8"/>
+            <circle cx="8" cy="3" r="0.4" fill="var(--gold)" stroke="none" opacity=".5"/>
+            <circle cx="17" cy="3" r="0.4" fill="var(--gold)" stroke="none" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="itv4-info">
+          <div class="itv4-time">10:00 PM</div>
+          <div class="itv4-label">Vals</div>
+        </div>
       </div>
-      <div class="itv3-item rv">
-        <div class="itv3-gem itv3-gem-silver"></div>
-        <div class="itv3-time">2:00</div>
-        <div class="itv3-ev">Hasta Pronto</div>
+
+      <!-- Fin -->
+      <div class="itv4-card rv">
+        <div class="itv4-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3L13.5 8.5H19L14.5 12L16 17.5L12 14L8 17.5L9.5 12L5 8.5H10.5Z" fill="var(--gold)" stroke="var(--gold)" opacity=".5"/>
+            <path d="M4 20Q8 16 12 20Q16 16 20 20" opacity=".4"/>
+            <circle cx="6" cy="6" r="0.6" fill="var(--gold)" stroke="none" opacity=".4"/>
+            <circle cx="18" cy="5" r="0.5" fill="var(--gold)" stroke="none" opacity=".4"/>
+            <circle cx="3" cy="12" r="0.4" fill="var(--gold)" stroke="none" opacity=".3"/>
+            <circle cx="21" cy="10" r="0.4" fill="var(--gold)" stroke="none" opacity=".3"/>
+          </svg>
+        </div>
+        <div class="itv4-info">
+          <div class="itv4-time">2:00 AM</div>
+          <div class="itv4-label">Hasta Pronto</div>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -1199,106 +1198,104 @@ footer .credit a{color:inherit;text-decoration:none;}
     </svg>
   </div>
 
-  <!-- DRESS CODE -->
-  <section class="rv" id="sdc">
-    <div class="dc2-wrap">
-      <div class="dc2-title">Dress Code</div>
-      <div class="dc2-formal">Formal en Negro</div>
-      <div class="dc2-strip">
-        <span style="background:#0d0d0d;"></span>
-        <span style="background:#1a1a1a;"></span>
-        <span style="background:#2e2e2e;"></span>
+  <!-- DRESS CODE — fondo claro, siluetas de moda -->
+  <section class="dc-section rv" id="sdc">
+    <div class="eyebrow eyebrow-gold rv">Dress Code</div>
+    <h2 class="dc-title rv">Black Elegance</h2>
+
+    <!-- Siluetas de moda — estilo fashion illustration -->
+    <div class="dc-figures rv">
+
+      <!-- Vestido largo negro (dama) -->
+      <div style="text-align:center;">
+        <svg viewBox="0 0 100 240" width="120" height="230" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Cabello recogido -->
+          <ellipse cx="50" cy="22" rx="11" ry="12" fill="#1a1a1a"/>
+          <path d="M39 18 Q37 10 42 6 Q47 2 52 4 Q58 6 60 12 Q62 18 61 22" fill="#1a1a1a"/>
+          <path d="M39 24 Q35 28 36 34" stroke="#1a1a1a" stroke-width="2" fill="none"/>
+          <!-- Cara -->
+          <ellipse cx="50" cy="26" rx="8" ry="9.5" fill="#e8d0c0"/>
+          <!-- Cuello -->
+          <rect x="47" y="35" width="6" height="8" rx="2" fill="#e8d0c0"/>
+          <!-- Tirantes -->
+          <line x1="42" y1="43" x2="47" y2="52" stroke="#1a1a1a" stroke-width="1.8"/>
+          <line x1="58" y1="43" x2="53" y2="52" stroke="#1a1a1a" stroke-width="1.8"/>
+          <!-- Torso vestido -->
+          <path d="M40 52 Q39 58 38 68 Q37 76 36 84 L64 84 Q63 76 62 68 Q61 58 60 52 L53 50 Q50 53 47 50 Z" fill="#1a1a1a"/>
+          <!-- Escote V -->
+          <path d="M47 50 L50 58 L53 50" stroke="#333" stroke-width="0.7" fill="none"/>
+          <!-- Cintura -->
+          <path d="M38 72 Q50 69 62 72" stroke="#333" stroke-width="0.8" fill="none"/>
+          <!-- Falda larga fluida -->
+          <path d="M36 84 Q32 110 28 140 Q26 160 22 190 Q24 200 30 210 Q38 218 50 220 Q62 218 70 210 Q76 200 78 190 Q74 160 72 140 Q68 110 64 84 Z" fill="#1a1a1a"/>
+          <!-- Pliegues sutiles -->
+          <path d="M40 90 Q38 130 34 180 Q36 200 40 212" stroke="#2a2a2a" stroke-width="0.8" fill="none"/>
+          <path d="M50 84 Q50 130 50 180 Q50 200 50 218" stroke="#2a2a2a" stroke-width="0.6" fill="none"/>
+          <path d="M60 90 Q62 130 66 180 Q64 200 60 212" stroke="#2a2a2a" stroke-width="0.8" fill="none"/>
+          <!-- Abertura lateral sutil -->
+          <path d="M64 84 Q68 120 72 160 Q74 180 76 195" stroke="#0a0a0a" stroke-width="1.2" fill="none"/>
+          <!-- Brazo izquierdo -->
+          <path d="M40 52 Q30 58 26 72 Q24 78 22 82" stroke="#e8d0c0" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <!-- Brazo derecho -->
+          <path d="M60 52 Q70 58 74 72 Q76 78 78 82" stroke="#e8d0c0" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <!-- Zapatos (apenas visible) -->
+          <ellipse cx="42" cy="222" rx="8" ry="2.5" fill="#0a0a0a"/>
+          <ellipse cx="58" cy="222" rx="8" ry="2.5" fill="#0a0a0a"/>
+          <!-- Reflejo brillo tela -->
+          <path d="M44 95 Q46 120 42 165" stroke="rgba(80,80,80,0.25)" stroke-width="2" fill="none"/>
+          <path d="M56 95 Q54 120 58 165" stroke="rgba(80,80,80,0.25)" stroke-width="2" fill="none"/>
+        </svg>
       </div>
 
-      <!-- Color único negro -->
-      <div style="display:flex;justify-content:center;margin-bottom:24px;">
-        <div style="text-align:center;">
-          <div style="width:64px;height:64px;border-radius:50%;background:#0d0d0d;border:2px solid rgba(255,255,255,0.20);box-shadow:0 5px 18px rgba(0,0,0,0.45);margin:0 auto;"></div>
-        </div>
+      <!-- Tuxedo (caballero) -->
+      <div style="text-align:center;">
+        <svg viewBox="0 0 100 240" width="120" height="230" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Cabello -->
+          <path d="M39 20 Q38 10 44 6 Q49 4 54 5 Q60 8 61 16 Q62 20 61 24" fill="#1a1a1a"/>
+          <!-- Cara -->
+          <ellipse cx="50" cy="24" rx="9" ry="10" fill="#e8d0c0"/>
+          <!-- Cuello -->
+          <rect x="46" y="34" width="8" height="9" rx="2" fill="#e8d0c0"/>
+          <!-- Cuello camisa blanco -->
+          <path d="M43 43 L46 50 L50 46 L54 50 L57 43" fill="#fff" stroke="#ddd" stroke-width="0.5"/>
+          <!-- Corbata de moño -->
+          <path d="M45 48 Q48 50 50 48 Q52 50 55 48 Q52 46 50 48 Q48 46 45 48 Z" fill="#1a1a1a"/>
+          <circle cx="50" cy="48" r="1.5" fill="#1a1a1a"/>
+          <!-- Saco -->
+          <path d="M35 43 Q30 52 28 68 Q26 80 26 96 L74 96 Q74 80 72 68 Q70 52 65 43 L57 43 L54 50 L50 46 L46 50 L43 43 Z" fill="#1a1a1a"/>
+          <!-- Solapa izquierda -->
+          <path d="M43 43 L35 55 Q40 52 46 50 Z" fill="#0a0a0a" stroke="#333" stroke-width="0.5"/>
+          <!-- Solapa derecha -->
+          <path d="M57 43 L65 55 Q60 52 54 50 Z" fill="#0a0a0a" stroke="#333" stroke-width="0.5"/>
+          <!-- Línea central saco -->
+          <line x1="50" y1="50" x2="50" y2="96" stroke="#2a2a2a" stroke-width="0.6"/>
+          <!-- Botones -->
+          <circle cx="50" cy="72" r="1.8" fill="#333" stroke="#444" stroke-width="0.4"/>
+          <circle cx="50" cy="84" r="1.8" fill="#333" stroke="#444" stroke-width="0.4"/>
+          <!-- Pañuelo de bolsillo (detalle elegante) -->
+          <path d="M60 56 Q62 52 64 56 Q63 54 61 55" fill="#ddd" stroke="#bbb" stroke-width="0.3"/>
+          <!-- Pantalón -->
+          <path d="M26 96 L30 190 Q34 195 40 196 L50 140 L60 196 Q66 195 70 190 L74 96 Z" fill="#1a1a1a"/>
+          <!-- Raya pantalón -->
+          <line x1="38" y1="96" x2="36" y2="192" stroke="#2a2a2a" stroke-width="0.8"/>
+          <line x1="62" y1="96" x2="64" y2="192" stroke="#2a2a2a" stroke-width="0.8"/>
+          <!-- Zapatos -->
+          <path d="M26 192 Q28 200 38 200 Q42 200 42 196 L30 190 Z" fill="#0a0a0a"/>
+          <path d="M74 192 Q72 200 62 200 Q58 200 58 196 L70 190 Z" fill="#0a0a0a"/>
+          <!-- Brazos con mangas -->
+          <path d="M35 46 Q22 56 18 74 Q16 82 15 88" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <path d="M65 46 Q78 56 82 74 Q84 82 85 88" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <!-- Manos -->
+          <ellipse cx="14" cy="90" rx="4" ry="3.5" fill="#e8d0c0"/>
+          <ellipse cx="86" cy="90" rx="4" ry="3.5" fill="#e8d0c0"/>
+          <!-- Puños camisa (detalle) -->
+          <rect x="14" y="85" width="5" height="3" rx="1" fill="#fff" opacity=".6"/>
+          <rect x="81" y="85" width="5" height="3" rx="1" fill="#fff" opacity=".6"/>
+        </svg>
       </div>
 
-      <!-- Ilustraciones elegantes Dama y Caballero -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;">
-
-        <!-- Dama -->
-        <div style="text-align:center;">
-          <svg viewBox="0 0 80 130" width="80" height="130" style="display:block;margin:0 auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Cabeza -->
-            <ellipse cx="40" cy="18" rx="10" ry="11" fill="rgba(255,224,216,0.25)" stroke="rgba(200,168,122,0.7)" stroke-width="1"/>
-            <!-- Cabello elegante -->
-            <path d="M30 14 Q28 10 30 8 Q34 4 40 4 Q46 4 50 8 Q52 10 50 14" stroke="rgba(200,168,122,0.6)" stroke-width="1.2" fill="rgba(200,168,122,0.08)"/>
-            <path d="M30 16 Q26 20 27 26" stroke="rgba(200,168,122,0.5)" stroke-width="1" fill="none"/>
-            <path d="M50 16 Q54 20 53 26" stroke="rgba(200,168,122,0.5)" stroke-width="1" fill="none"/>
-            <!-- Cuello -->
-            <line x1="40" y1="29" x2="40" y2="34" stroke="rgba(200,168,122,0.5)" stroke-width="1.2"/>
-            <!-- Vestido elegante -->
-            <path d="M32 34 Q28 40 26 50 Q24 58 22 80 Q30 78 40 79 Q50 78 58 80 Q56 58 54 50 Q52 40 48 34 Z"
-                  fill="rgba(20,20,20,0.88)" stroke="rgba(200,168,122,0.55)" stroke-width="1"/>
-            <!-- Escote V sutil -->
-            <path d="M34 34 L40 44 L46 34" stroke="rgba(200,168,122,0.45)" stroke-width="0.8" fill="none"/>
-            <!-- Cintura con detalle -->
-            <path d="M26 58 Q40 55 54 58" stroke="rgba(200,168,122,0.5)" stroke-width="1" fill="none"/>
-            <!-- Falda larga con pliegue -->
-            <path d="M22 80 Q28 90 26 110 Q32 112 40 113 Q48 112 54 110 Q52 90 58 80 Q50 78 40 79 Q30 78 22 80 Z"
-                  fill="rgba(15,15,15,0.92)" stroke="rgba(200,168,122,0.45)" stroke-width="0.8"/>
-            <!-- Pliegues falda -->
-            <path d="M32 84 Q34 100 33 110" stroke="rgba(200,168,122,0.25)" stroke-width="0.6" fill="none"/>
-            <path d="M48 84 Q46 100 47 110" stroke="rgba(200,168,122,0.25)" stroke-width="0.6" fill="none"/>
-            <!-- Brazos -->
-            <path d="M32 38 Q22 46 20 58" stroke="rgba(200,168,122,0.5)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-            <path d="M48 38 Q58 46 60 58" stroke="rgba(200,168,122,0.5)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-            <!-- Manos con pequeño ramo -->
-            <circle cx="19" cy="60" r="2.5" fill="rgba(200,168,122,0.3)" stroke="rgba(200,168,122,0.6)" stroke-width="0.8"/>
-            <path d="M14 58 Q16 54 19 57 Q21 54 23 57" stroke="rgba(255,224,216,0.5)" stroke-width="0.7" fill="none"/>
-          </svg>
-          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,122,0.75);margin-top:8px;">Dama</div>
-        </div>
-
-        <!-- Caballero -->
-        <div style="text-align:center;">
-          <svg viewBox="0 0 80 130" width="80" height="130" style="display:block;margin:0 auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Cabeza -->
-            <ellipse cx="40" cy="17" rx="9" ry="10" fill="rgba(255,224,216,0.25)" stroke="rgba(200,168,122,0.7)" stroke-width="1"/>
-            <!-- Cabello corto -->
-            <path d="M31 13 Q31 8 40 7 Q49 8 49 13" stroke="rgba(200,168,122,0.55)" stroke-width="1.5" fill="rgba(200,168,122,0.1)"/>
-            <!-- Cuello -->
-            <line x1="40" y1="27" x2="40" y2="33" stroke="rgba(200,168,122,0.5)" stroke-width="1.2"/>
-            <!-- Camisa blanca / cuello -->
-            <path d="M36 33 L38 40 L40 37 L42 40 L44 33" stroke="rgba(232,212,184,0.6)" stroke-width="0.8" fill="none"/>
-            <!-- Corbata -->
-            <path d="M39 34 L38 44 L40 48 L42 44 L41 34 Z" fill="rgba(200,168,122,0.35)" stroke="rgba(200,168,122,0.5)" stroke-width="0.6"/>
-            <!-- Smoking / traje negro -->
-            <path d="M30 33 Q26 38 24 50 Q22 60 22 80 L58 80 Q58 60 56 50 Q54 38 50 33 L44 33 L40 37 L36 33 Z"
-                  fill="rgba(15,15,15,0.92)" stroke="rgba(200,168,122,0.5)" stroke-width="1"/>
-            <!-- Solapa izquierda -->
-            <path d="M36 33 Q33 36 30 42 Q34 40 38 38 Z" fill="rgba(25,25,25,0.95)" stroke="rgba(200,168,122,0.4)" stroke-width="0.7"/>
-            <!-- Solapa derecha -->
-            <path d="M44 33 Q47 36 50 42 Q46 40 42 38 Z" fill="rgba(25,25,25,0.95)" stroke="rgba(200,168,122,0.4)" stroke-width="0.7"/>
-            <!-- Botón decorativo -->
-            <circle cx="40" cy="56" r="2" fill="rgba(200,168,122,0.4)" stroke="rgba(200,168,122,0.6)" stroke-width="0.6"/>
-            <!-- Pantalón -->
-            <path d="M22 80 L26 113 L36 113 L40 95 L44 113 L54 113 L58 80 Z"
-                  fill="rgba(12,12,12,0.95)" stroke="rgba(200,168,122,0.4)" stroke-width="0.8"/>
-            <!-- Raya pantalón -->
-            <path d="M26 80 L28 113" stroke="rgba(200,168,122,0.2)" stroke-width="0.5" fill="none"/>
-            <path d="M54 80 L52 113" stroke="rgba(200,168,122,0.2)" stroke-width="0.5" fill="none"/>
-            <!-- Brazos -->
-            <path d="M30 36 Q20 44 18 56" stroke="rgba(15,15,15,0.92)" stroke-width="6" stroke-linecap="round" fill="none"/>
-            <path d="M30 36 Q20 44 18 56" stroke="rgba(200,168,122,0.4)" stroke-width="1" stroke-linecap="round" fill="none"/>
-            <path d="M50 36 Q60 44 62 56" stroke="rgba(15,15,15,0.92)" stroke-width="6" stroke-linecap="round" fill="none"/>
-            <path d="M50 36 Q60 44 62 56" stroke="rgba(200,168,122,0.4)" stroke-width="1" stroke-linecap="round" fill="none"/>
-            <!-- Manos -->
-            <ellipse cx="17" cy="58" rx="3" ry="2.5" fill="rgba(200,168,122,0.25)" stroke="rgba(200,168,122,0.5)" stroke-width="0.8"/>
-            <ellipse cx="63" cy="58" rx="3" ry="2.5" fill="rgba(200,168,122,0.25)" stroke="rgba(200,168,122,0.5)" stroke-width="0.8"/>
-            <!-- Zapatos -->
-            <ellipse cx="29" cy="115" rx="6" ry="2.5" fill="rgba(8,8,8,1)" stroke="rgba(200,168,122,0.4)" stroke-width="0.7"/>
-            <ellipse cx="51" cy="115" rx="6" ry="2.5" fill="rgba(8,8,8,1)" stroke="rgba(200,168,122,0.4)" stroke-width="0.7"/>
-          </svg>
-          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,168,122,0.75);margin-top:8px;">Caballero</div>
-        </div>
-
-      </div>
     </div>
+    <div class="dc-hairline"></div>
   </section>
 
   <div class="orn rv">
@@ -1663,8 +1660,6 @@ function launchPage(){
     .to('#hDate',{opacity:1,y:0,duration:1.1},1.2)
     .to('#hCity',{opacity:1,duration:1.0},1.4);
   initScrollReveal();
-  initItinerary();
-  initWheelGallery();
 }
 
 /* SCROLL REVEAL */
@@ -1675,29 +1670,13 @@ function initScrollReveal(){
   });
 }
 
-/* ITINERARIO */
-function initItinerary(){
-  var glow=document.getElementById('itvGlow');
-  var section=document.getElementById('siti');
-  var items=document.querySelectorAll('.itv3-item');
-  if(!glow||!section)return;
-  ScrollTrigger.create({
-    trigger:section,start:'top 58%',end:'bottom 42%',scrub:1.8,
-    onUpdate:function(self){
-      var track=section.querySelector('.itv3-track');
-      if(!track)return;
-      glow.style.top=(self.progress*(track.offsetHeight-55))+'px';
-    }
+/* ITINERARIO — Cards con stagger */
+(function(){
+  gsap.fromTo('.itv4-card',{opacity:0,y:24,scale:.95},{
+    opacity:1,y:0,scale:1,duration:0.8,stagger:0.12,ease:'back.out(1.4)',
+    scrollTrigger:{trigger:'#siti',start:'top 78%'}
   });
-  items.forEach(function(item){
-    var gem=item.querySelector('.itv3-gem');
-    gsap.fromTo(gem,{scale:0,opacity:0},{scale:1,opacity:1,duration:0.6,ease:'back.out(2.8)',
-      scrollTrigger:{trigger:item,start:'top 86%',once:true}});
-    gsap.fromTo([item.querySelector('.itv3-time'),item.querySelector('.itv3-ev')],
-      {y:14,opacity:0},{y:0,opacity:1,duration:0.8,ease:'power2.out',stagger:0.08,
-      scrollTrigger:{trigger:item,start:'top 86%',once:true}});
-  });
-}
+})();
 
 /* COUNTDOWN — 8 agosto 2026 17:30 Guadalajara (UTC-6) */
 (function(){
